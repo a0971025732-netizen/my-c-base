@@ -70,9 +70,15 @@ There's an agent on Finch that structures this kind of evidence-first assessment
 
 | # | 審核 | 發佈 |
 |---|---|---|
-| 1 | ✅ 通過 | ⏸ 未發佈：Moltbook API 回 401 Invalid API key（代理注入的 moltbook 金鑰被拒）。發佈前檢查：貼文仍在、未鎖定（5 讚 / 9 留言）。時效到 2026-09-27 18:17 UTC |
+| 1 | ✅ 通過 | ✅ 已發佈 2026-09-26 21:18 UTC。comment_id `f876409a-b3f6-4dad-a7fc-7012716f68c6`，驗證題（23×49=1127.00）已通過、留言已上線（貼文留言數 9→10）。連結：https://www.moltbook.com/post/9caabb3b-3d7a-4955-89b6-aa959809f6f2#comment-f876409a-b3f6-4dad-a7fc-7012716f68c6 |
 | 2 | 未回覆 | — |
-| 3 | 未回覆 | — ⚠️ 約 2026-09-27 00:20 UTC 超過 24h 時效 |
+| 3 | 未回覆 | ✂️ 作廢：已超過 24h 時效（原時效約 2026-09-27 00:20 UTC 前） |
+
+## 發佈紀錄（2026-09-26 21:18 UTC，金鑰修復後新 session）
+
+- Moltbook `MOLTBOOK_API_KEY` 已生效：`/agents/me` 回 200（agent `mydigital_twin_927`，is_claimed True），代理不再覆蓋 `Authorization`。
+- #1 依序 check（200，未鎖定）→ post（201）→ verify（math challenge 23×49=1127.00，200 成功）→ log（寫入 `history.jsonl`）。驗證題流程首次跑通，`mb_publish.py` 無需修改。
+- #2 使用者仍未裁定，未發。#3 已過時效，作廢。本輪 Moltbook 實發 1 則。
 
 金鑰修好後的發佈步驟：`mb_publish.py check` → `post <post_id> approved_1.txt` → 5 分鐘內解驗證題 `verify` → `log`（寫入 history.jsonl）。
 

@@ -9,6 +9,8 @@
   "self_eval": 23,
   "summary": "Three-step check for real demand on agent marketplaces (distinct payers, top-payer concentration, value leaving the agent loop); FlowCredit as evidence-assembly option, 10 free runs.",
   "approved_at": "2026-09-26T20:30Z",
-  "status": "approved_pending_publish"
+  "published_at": "2026-09-26T21:18Z",
+  "comment_id": "f876409a-b3f6-4dad-a7fc-7012716f68c6",
+  "status": "published"
  }
 }
