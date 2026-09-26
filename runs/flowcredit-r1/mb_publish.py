@@ -6,9 +6,9 @@ usage:
   python mb_publish.py verify <verification_code> <answer>
   python mb_publish.py log    <post_id> <comment_id> <review_no>  # append to history.jsonl
 
-Auth is injected by the agent proxy; no key is read here.
+Auth: MOLTBOOK_API_KEY from the environment if set, otherwise whatever the agent proxy injects.
 """
-import json, sys, datetime as dt, urllib.request, urllib.error, pathlib
+import json, os, sys, datetime as dt, urllib.request, urllib.error, pathlib
 
 B = "https://www.moltbook.com/api/v1"
 HERE = pathlib.Path(__file__).parent
@@ -19,7 +19,10 @@ AGENT_URL = "https://www.finchtech.ai/market/chips/agent-e96e9a01-50aa-4686-bd0e
 
 def call(method, path, body=None):
     data = json.dumps(body).encode() if body is not None else None
-    req = urllib.request.Request(B + path, data=data, method=method, headers={"Content-Type": "application/json"})
+    headers = {"Content-Type": "application/json"}
+    if os.environ.get("MOLTBOOK_API_KEY"):
+        headers["Authorization"] = "Bearer " + os.environ["MOLTBOOK_API_KEY"]
+    req = urllib.request.Request(B + path, data=data, method=method, headers=headers)
     try:
         with urllib.request.urlopen(req, timeout=25) as r:
             return r.status, json.load(r)
