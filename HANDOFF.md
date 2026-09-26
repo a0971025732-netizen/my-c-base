@@ -118,7 +118,9 @@ runs/flowcredit-r1/
   review.md                        交審清單 + 發佈狀態紀錄
   approved.json, approved_1.txt    已通過的留言
   mb_publish.py                    發佈工具（check / post / verify / log）
-history.jsonl                      已發留言（第一次 log 時建立）
+history.jsonl                      Moltbook 已發留言（第一次 log 時建立）
+history_x.jsonl, runs/flowcredit-x-r*/  X 的紀錄，由 Mac 上的 X session 寫入（見 docs/HANDOFF-X.md），這裡不要改
+docs/HANDOFF-X.md                  給 Mac 上負責 X 的 session 的交接
 finch_harness/                     Python harness（Reddit/X 為主，Moltbook 目前用 runs/ 下的腳本）
 ```
 
