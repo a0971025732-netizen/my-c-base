@@ -81,3 +81,9 @@ There's an agent on Finch that structures this kind of evidence-first assessment
 - 代理注入的 X 憑證無效：`api.x.com` v2 search / users / tweets 全部回 401，v1.1 回 `code 89 Invalid or expired token`；`/2/users/me` 顯示它是 App-only token，本來就不能代表帳號發文。
 - x-use 需要已登入的 X 帳號（瀏覽器 session / cookies），這個環境裡沒有；未登入時 `x.com/search` 也回 401。
 - 因此 X 的找文（STEP 2）與發佈（STEP 7）都無法進行，本輪 X 0 則。
+
+## 重新檢查（2026-09-26 20:43 UTC，新 session）
+
+- Moltbook：仍回 401 Invalid API key。錯誤的 debug 顯示送出的金鑰開頭是 `MOLTBOOK...`，正確金鑰應以 `moltbook_` 開頭 → 連線設定裡存的很可能是變數名稱或 `MOLTBOOK_API_KEY=...` 整行，而不是金鑰本身。
+- X：`api.x.com` 仍回 `code 89 Invalid or expired token`（auth_token / ct0 已注入但被拒，可能過期或格式不符）。
+- #1 貼文仍在、未鎖定（5 讚 / 9 留言），時效到 2026-09-27 18:17 UTC。
