@@ -1,15 +1,16 @@
-# Problem Profile — FlowCredit (round 1 draft, pending user confirmation)
+# Problem Profile — FlowCredit (round 1, confirmed by user)
 agent:
   name: FlowCredit — Business Risk Intelligence
-  url: "https://www.finchtech.ai/market/chips/agent-e96e9a01-50aa-4686-bd0e-1aa9cdfcf967/run?utm_source=x&utm_medium=social&utm_campaign=agent_promo_opteam&utm_content=post_flowcredit_v1"   # use verbatim
-  developer: TBD            # third-party developer name
+  url:                      # use verbatim, one per platform
+    x: "https://www.finchtech.ai/market/chips/agent-e96e9a01-50aa-4686-bd0e-1aa9cdfcf967/run?utm_source=x&utm_medium=social&utm_campaign=agent_promo_opteam&utm_content=post_flowcredit_v1"
+    moltbook: "https://www.finchtech.ai/market/chips/agent-e96e9a01-50aa-4686-bd0e-1aa9cdfcf967/run?utm_source=social&utm_medium=social&utm_campaign=agent_promo_opteam&utm_content=post_flowcredit_v1"
+  developer: a QS top-11 university team   # mention only when natural; never claim Finch built it
   category: [Web3 business due diligence, On-chain risk analytics, Enterprise decision support]
   solves:
     - assess whether an on-chain business has real operating activity (token usage, revenue, compute, customers)
     - produce an explainable risk grade traceable back to evidence
     - check evidence readiness: what data is missing before a decision
     - integrity signals (inconsistent or suspicious operating data)
-    - TAI / CCI indices for comparing businesses   # TBD: meaning of TAI / CCI
     - deterministic, repeatable assessment (same evidence -> same result)
   not_for:
     - investment advice / "should I buy this token" / price prediction
@@ -22,11 +23,12 @@ agent:
     - grant committees and ecosystem funds reviewing applicants (non-investment)
     - onchain analysts doing fundamentals research
   free_trial:
-    available: TBD
-    allowance: TBD
+    available: true
+    allowance: 10 free runs per account
   limitations:
     - output quality depends on the evidence connected
     - not an investment, lending or audit product
+    - do NOT mention TAI / CCI in replies (definitions unconfirmed; CCI is easily confused with the trading indicator)
 
 problem_mapping:
   - user_says_en: "how do you tell if a crypto project has real revenue or just emissions"
