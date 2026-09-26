@@ -1,0 +1,10 @@
+# Optional per-agent additions passed with `finch campaign start <url> --profile this.yaml`.
+# Lists are merged in front of what the profile builder derives; scalars override.
+subreddits: [excel, dataengineering, datascience, analytics]
+reddit_queries:
+  - "clean messy csv"
+  - "dedupe spreadsheet rows"
+  - "best tool to normalize data"
+x_queries:
+  - '("messy csv" OR "clean spreadsheet") -is:retweet lang:en'
+free_usage: "20 free runs / month"

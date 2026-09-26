@@ -1,0 +1,238 @@
+# FINCH OUTBOUND GROWTH HARNESS — TOOL REGISTRY (Phase 0 output)
+#
+# Persistent registry of the tools selected during Harness initialization.
+# Campaigns load this file; they do NOT redo GitHub discovery.
+# Re-research a capability only when a trigger in `reresearch_triggers` fires.
+#
+# status:
+#   active          – selected, dependency importable, usable once credentials exist
+#   manual          – MANUAL REVIEW REQUIRED: a human performs the action
+#   optional        – enabled only when configured
+#   rejected        – evaluated and rejected (kept for audit trail)
+#
+# Research snapshot date: 2026-09-26 (stars via GitHub API on that date).
+
+version: 1
+researched_at: "2026-09-26"
+
+reresearch_triggers:
+  - implementation_fails
+  - deprecated
+  - platform_api_or_policy_change
+  - repository_abandoned
+  - materially_better_alternative
+  - capability_missing
+
+platform_constraints:
+  reddit:
+    - "Responsible Builder Policy (Nov 2025): Data API access requires a manual application and explicit approval before any credential works. No approval → Reddit API tools cannot run."
+    - "Every automated/bot account must be operated transparently; comments carry an explicit affiliation disclosure (enforced by the quality gate)."
+    - "Per-subreddit self-promotion rules vary; the harness never posts into a subreddit whose rules forbid it (human confirms in review)."
+  x:
+    - "Automation rules: automated replies based on keyword searches are not permitted."
+    - "Since 2026-02-23, POST /2/tweets replies are rejected unless the original author @mentioned or quoted the replying account (all tiers except Enterprise/Public Utility)."
+    - "API is pay-per-use: ~$0.005 per post read, ~$0.015 per post created, ~$0.20 per post containing a link."
+    - "Consequence: X replies are drafted by the harness and posted by a human through the X web intent. The harness never posts to X."
+
+capabilities:
+  # ---------------- Discovery ----------------
+  - capability: web_search
+    tool: Claude web search (Claude Code WebSearch in orchestrator sessions; Anthropic API server tool web_search_20260209 in headless runs)
+    source: Anthropic (first-party)
+    stars: null
+    status: active
+    confidence: high
+    notes: "Candidate URLs found by web search enter the pipeline through `finch import`."
+
+  - capability: reddit_search
+    tool: PRAW
+    module: praw
+    source: https://github.com/praw-dev/praw
+    stars: 4260
+    license: BSD-2-Clause
+    last_push: "2026-09-25"
+    tier: preferred
+    status: active
+    confidence: high
+    auth: "OAuth2 script app (REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET / REDDIT_USERNAME / REDDIT_PASSWORD / REDDIT_USER_AGENT)"
+    requires_env: [REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, REDDIT_USER_AGENT]
+    fallback: "Reddit public JSON endpoints (/search.json, /r/<sub>/new.json) — read-only, heavily rate-limited, used only when no approved credentials exist."
+
+  - capability: reddit_post_discovery
+    tool: PRAW (subreddit.new / subreddit.search / subreddit.rising)
+    module: praw
+    source: https://github.com/praw-dev/praw
+    stars: 4260
+    status: active
+    confidence: high
+
+  - capability: community_discovery
+    tool: PRAW (subreddits.search) + Claude semantic expansion of agent topics
+    module: praw
+    source: https://github.com/praw-dev/praw
+    stars: 4260
+    status: active
+    confidence: medium
+
+  - capability: x_search
+    tool: Tweepy (Client.search_recent_tweets, X API v2)
+    module: tweepy
+    source: https://github.com/tweepy/tweepy
+    stars: 11181
+    license: MIT
+    last_push: "2026-07-02"
+    tier: preferred
+    status: active
+    confidence: high
+    auth: "Bearer token (X_BEARER_TOKEN); pay-per-use credits"
+    requires_env: [X_BEARER_TOKEN]
+
+  - capability: semantic_search
+    tool: Claude (query expansion + relevance judgment) via anthropic SDK
+    module: anthropic
+    source: https://github.com/anthropics/anthropic-sdk-python
+    stars: null
+    status: active
+    confidence: high
+    requires_env: [ANTHROPIC_API_KEY]
+    notes: "Without an API key the harness falls back to keyword-overlap heuristics."
+
+  # ---------------- Conversation analysis ----------------
+  - capability: url_retrieval
+    tool: httpx + BeautifulSoup
+    module: httpx
+    source: https://github.com/encode/httpx
+    stars: null
+    status: active
+    confidence: high
+
+  - capability: thread_reading
+    tool: PRAW (submission.comments) / Tweepy (conversation_id search)
+    module: praw
+    source: https://github.com/praw-dev/praw
+    stars: 4260
+    status: active
+    confidence: high
+
+  - capability: author_context_analysis
+    tool: Claude (reads post + top comments + author flair/history summary)
+    module: anthropic
+    source: https://github.com/anthropics/anthropic-sdk-python
+    requires_env: [ANTHROPIC_API_KEY]
+    status: active
+    confidence: medium
+
+  # ---------------- Engagement ----------------
+  - capability: reddit_comment_publish
+    tool: PRAW (submission.reply / comment.reply)
+    module: praw
+    source: https://github.com/praw-dev/praw
+    stars: 4260
+    status: active
+    confidence: medium
+    gating: "Only after per-comment human approval AND an approved Reddit API app. Default mode is `manual` (human pastes the approved comment)."
+    requires_env: [REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, REDDIT_USERNAME, REDDIT_PASSWORD, REDDIT_USER_AGENT]
+
+  - capability: x_reply_publish
+    tool: X web intent (https://x.com/intent/post?in_reply_to=<id>&text=<text>) — human clicks Post
+    source: X platform
+    stars: null
+    status: manual
+    confidence: high
+    notes: "MANUAL REVIEW REQUIRED. Programmatic keyword-driven replies violate X automation rules and are blocked by the API since 2026-02-23."
+
+  # ---------------- Campaign management ----------------
+  - capability: candidate_storage
+    tool: SQLite (stdlib sqlite3)
+    source: internal
+    status: active
+    confidence: high
+  - capability: opportunity_scoring
+    tool: finch_harness.scoring (deterministic freshness/momentum + Claude-judged relevance/intent/fit)
+    source: internal
+    status: active
+    confidence: high
+  - capability: comment_generation
+    tool: Claude via anthropic SDK (structured outputs)
+    module: anthropic
+    source: internal
+    requires_env: [ANTHROPIC_API_KEY]
+    fallback: "Orchestrating Claude Code session or a human writes drafts and registers them with `finch add-draft`."
+    status: active
+    confidence: high
+  - capability: comment_quality_evaluation
+    tool: finch_harness.quality_gate (Claude judge + hard rule checks)
+    source: internal
+    status: active
+    confidence: high
+  - capability: duplicate_detection
+    tool: finch_harness.quality_gate (thread uniqueness + text similarity vs. history)
+    source: internal
+    status: active
+    confidence: high
+  - capability: campaign_memory
+    tool: SQLite memory tables + markdown reports
+    source: internal
+    status: active
+    confidence: high
+
+  # ---------------- Measurement ----------------
+  - capability: reddit_engagement_tracking
+    tool: PRAW (comment.score, comment.replies)
+    module: praw
+    source: https://github.com/praw-dev/praw
+    stars: 4260
+    status: active
+    confidence: high
+  - capability: x_engagement_tracking
+    tool: Tweepy (get_tweet public_metrics) on the human-posted reply id
+    module: tweepy
+    source: https://github.com/tweepy/tweepy
+    stars: 11181
+    status: active
+    confidence: medium
+  - capability: author_response_tracking
+    tool: PRAW reply tree / Tweepy conversation search filtered to original author
+    status: active
+    confidence: medium
+  - capability: finch_click_tracking
+    tool: CSV import from Finch analytics (`finch import-conversions`)
+    source: Finch
+    status: manual
+    confidence: low
+    notes: "MANUAL REVIEW REQUIRED until a Finch analytics API is available. The exact Agent URL is kept unmodified in comments, so attribution relies on referrer data from Finch."
+  - capability: agent_usage_tracking
+    tool: CSV import from Finch analytics
+    source: Finch
+    status: manual
+    confidence: low
+
+  # ---------------- Optimization ----------------
+  - capability: campaign_analysis
+    tool: finch_harness.optimize
+    source: internal
+    status: active
+    confidence: high
+
+rejected:
+  - tool: d60/twikit
+    stars: 4695
+    reason: "Uses X internal API with account cookies/credentials; violates X ToS and puts the account at risk."
+  - tool: vladkens/twscrape
+    stars: 2803
+    reason: "Relies on multi-account rotation of logged-in accounts; incompatible with 'no fake identities'."
+  - tool: nirholas/XActions
+    stars: 545
+    reason: "Browser-automation auto-comment/follow bot; bypasses X API restrictions."
+  - tool: bisguzar/twitter-scraper
+    stars: 4005
+    reason: "Archived."
+  - tool: xdevplatform/xdk-python
+    stars: 47
+    reason: "Official but <50 stars and young; Tweepy covers the same v2 endpoints. Re-evaluate if Tweepy lags X API changes."
+  - tool: karanb192/reddit-mcp-buddy
+    stars: 837
+    reason: "Read-only MCP; useful for interactive exploration but duplicates PRAW. Optional for orchestrator sessions."
+  - tool: jordanburke/reddit-mcp-server
+    stars: 275
+    reason: "Can create content, but a thin wrapper over the same API with less control over approval gating than PRAW directly."

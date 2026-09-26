@@ -1,0 +1,77 @@
+# STRATEGY LAYER — baseline parameters.
+# These are starting values. `finch analyze` writes recommended overrides to
+# the campaign memory; promote them here once a TEST finding is confirmed.
+
+campaign:
+  candidates_target: [40, 60]
+  qualified_target: [12, 16]
+  publish_target: [5, 8]
+  publish_max: 15
+  qualify_min_score: 60          # opportunity score (0-100) needed to be "qualified"
+  max_per_community: 2           # published comments per subreddit / X topic per campaign
+  platform_mix: {reddit: 0.7, x: 0.3}
+
+discovery:
+  reddit:
+    time_filter: week            # hour | day | week | month
+    sort: new
+    per_query_limit: 25
+    seed_subreddits: []          # filled per agent by the profile builder
+  x:
+    max_results: 25
+    lang: en
+    exclude: ["-is:retweet"]
+  max_post_age_hours: 168
+  intent_types:
+    - question
+    - tool_recommendation
+    - workflow_discussion
+    - technical_discussion
+    - industry_discussion
+    - comparison
+    - experience_sharing
+    - project_building
+    - educational
+    - emerging
+
+scoring_weights:               # must sum to 100
+  relevance: 25
+  intent: 20
+  freshness: 15
+  momentum: 10
+  audience_fit: 10
+  agent_fit: 15
+  naturalness: 5
+
+freshness_curve_hours:         # age -> fraction of freshness points
+  - [6, 1.0]
+  - [24, 0.85]
+  - [72, 0.6]
+  - [168, 0.3]
+  - [100000, 0.0]
+
+quality_gate:
+  min_total: 28                # of 35
+  max_promotional_intensity: 2
+  min_agent_fit: 4
+  min_conversation_fit: 4
+  max_similarity_to_history: 0.55
+  require_disclosure: true
+  max_rewrites: 2
+
+comment_styles:
+  - direct_answer              # answer the question, mention agent as one option
+  - workflow_walkthrough       # step-by-step how I'd do it, agent in one step
+  - comparison                 # tradeoffs between approaches incl. the agent
+  - experience_share           # what worked for us, with disclosure
+  - resource_list              # 2-4 resources, agent is one of them
+  - clarifying_plus_tip        # ask a clarifying question + give a tip
+
+disclosure_templates:
+  - "(Disclosure: I'm with Finch.)"
+  - "Full disclosure, I work on Finch."
+  - "(I help build agents on Finch, so I'm biased.)"
+
+llm:
+  model: claude-opus-5
+  effort: medium
