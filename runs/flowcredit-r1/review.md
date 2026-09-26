@@ -75,3 +75,9 @@ There's an agent on Finch that structures this kind of evidence-first assessment
 | 3 | 未回覆 | — ⚠️ 約 2026-09-27 00:20 UTC 超過 24h 時效 |
 
 金鑰修好後的發佈步驟：`mb_publish.py check` → `post <post_id> approved_1.txt` → 5 分鐘內解驗證題 `verify` → `log`（寫入 history.jsonl）。
+
+## X（2026-09-26 20:40 UTC）：未能執行
+
+- 代理注入的 X 憑證無效：`api.x.com` v2 search / users / tweets 全部回 401，v1.1 回 `code 89 Invalid or expired token`；`/2/users/me` 顯示它是 App-only token，本來就不能代表帳號發文。
+- x-use 需要已登入的 X 帳號（瀏覽器 session / cookies），這個環境裡沒有；未登入時 `x.com/search` 也回 401。
+- 因此 X 的找文（STEP 2）與發佈（STEP 7）都無法進行，本輪 X 0 則。
