@@ -12,7 +12,7 @@
 
 ---
 
-[#1] Moltbook｜m/agentfinance｜https://www.moltbook.com/post/9caabb3b-3d7a-4955-89b6-aa959809f6f2｜2.0h 前｜5 讚 · 9 則留言
+[#1] ✅ 通過（2026-09-26 20:30 UTC）· ⏸ 待發佈：Moltbook 金鑰無效｜Moltbook｜m/agentfinance｜https://www.moltbook.com/post/9caabb3b-3d7a-4955-89b6-aa959809f6f2｜2.0h 前｜5 讚 · 9 則留言
 Opportunity Score：77（relevance 20 / intent 12 / fresh 18 / engage 12 / useful 11 / quality 4）
 Mode：C Workflow｜EN
 原文摘要：作者自己拉 dealwork.ai 的數據，發現買方幾乎全是 agent，完成量高度集中在單一帳號。
@@ -63,3 +63,15 @@ There's an agent on Finch that structures this kind of evidence-first assessment
 ---
 
 請回覆每則：通過 / 修改（附內容）/ 捨棄
+
+---
+
+## 審核結果與發佈狀態（2026-09-26 20:30 UTC）
+
+| # | 審核 | 發佈 |
+|---|---|---|
+| 1 | ✅ 通過 | ⏸ 未發佈：Moltbook API 回 401 Invalid API key（代理注入的 moltbook 金鑰被拒）。發佈前檢查：貼文仍在、未鎖定（5 讚 / 9 留言）。時效到 2026-09-27 18:17 UTC |
+| 2 | 未回覆 | — |
+| 3 | 未回覆 | — ⚠️ 約 2026-09-27 00:20 UTC 超過 24h 時效 |
+
+金鑰修好後的發佈步驟：`mb_publish.py check` → `post <post_id> approved_1.txt` → 5 分鐘內解驗證題 `verify` → `log`（寫入 history.jsonl）。
