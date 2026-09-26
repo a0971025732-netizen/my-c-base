@@ -71,7 +71,9 @@ def test_hard_checks(profile):
     c = cand(1)
     assert quality_gate.hard_checks(reply(), profile, c, [], cfg) == []
     probs = quality_gate.hard_checks("Try this tool, it's great " * 10, profile, c, [], cfg)
-    assert "missing the exact Agent URL" in probs and "missing affiliation disclosure" in probs
+    assert "missing the exact Agent URL" in probs and "missing affiliation disclosure" not in probs
+    strict = {**cfg, "require_disclosure": True}
+    assert "missing affiliation disclosure" in quality_gate.hard_checks("Try this tool " * 10, profile, c, [], strict)
     assert any("too similar" in p for p in quality_gate.hard_checks(reply(), profile, c, [reply()], cfg))
     xc = cand(2, platform="x")
     assert any("too long for X" in p for p in quality_gate.hard_checks(reply(), profile, xc, [], cfg))

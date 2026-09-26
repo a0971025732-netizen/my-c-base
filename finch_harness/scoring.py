@@ -71,7 +71,7 @@ JUDGE_SYSTEM = (
     "intent: how much the author/participants want help, tools, or perspectives right now.\n"
     "audience_fit: whether participants are the agent's target users.\n"
     "agent_fit: whether recommending this specific agent would genuinely help this person.\n"
-    "naturalness: whether a disclosed mention would be welcome rather than spammy in this thread and community "
+    "naturalness: whether a mention of the agent would be welcome rather than spammy in this thread and community "
     "(0 if the community or post forbids self-promotion, or the thread is emotional/personal).\n"
     "intent_type: one of question, tool_recommendation, workflow_discussion, technical_discussion, industry_discussion, "
     "comparison, experience_sharing, project_building, educational, emerging.\n"

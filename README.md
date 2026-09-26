@@ -14,9 +14,9 @@ The system has two layers:
 
 ## Non-negotiables (enforced in code)
 
-- **Every reply includes the exact Agent URL and an affiliation disclosure.** The quality gate rejects a draft without either one. The system never poses as an independent user.
+- **Every reply includes the exact Agent URL, unmodified.** The quality gate rejects a draft without it. Finch affiliation is mentioned when it reads naturally (`quality_gate.require_disclosure: false`). The system never poses as an independent user or invents experiences.
 - **Every reply needs human approval** (`finch review`) before anything is published.
-- **X replies are always posted by a human** through the X web intent link. X's automation rules prohibit automated keyword-based replies. Since 2026-02-23 the X API also rejects programmatic replies unless the author mentioned or quoted you.
+- **X replies are posted by [x-use](https://github.com/ihuzaifashoukat/x-use)** (browser automation, no X API) only after the human approved each reply text. The X API route is not used: since 2026-02-23 it rejects programmatic replies unless the author mentioned or quoted you.
 - **Reddit API posting** (`--mode api`) needs an approved Data API app under the Responsible Builder Policy. It posts at most one comment every 10 minutes and respects a per-subreddit cap. The default mode is manual.
 - **No duplicate engagement:** one reply per thread across all campaigns, and a similarity check against every earlier reply.
 

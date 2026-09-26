@@ -1,4 +1,4 @@
-# Finch 外部推廣留言 Prompt v1.1
+# Finch 外部推廣留言 Prompt v1.2
 
 > 用途：每次提供一個 finchtech.ai 上架的（第三方）AI agent 連結與資料，即啟動一輪「找文 → 篩選 → 分析 → 寫留言 → 人工審核 → 發佈 → 追蹤 → 事後優化」流程。
 > 平台：X（中英文）、Moltbook（英文）。
@@ -18,7 +18,7 @@
 
 ## INPUT（使用者每輪提供）
 
-- `agent_url`：Finch 上的 agent 頁面連結
+- `agent_url`：Finch 上的 agent 頁面連結（使用者提供的連結已含 UTM，**原封不動使用，不得增刪參數**）
 - `agent_name`
 - 相關資料：介紹、功能、免費額度、限制、範例等，格式不限
 
@@ -35,7 +35,7 @@
 
 ## STEP 0｜工具準備（第一次或工具失效時）
 
-- **X**：使用 x-use（已跑通的方法）。
+- **X**：使用 [x-use](https://github.com/ihuzaifashoukat/x-use)（瀏覽器自動化，不走 X API）。留言經使用者審核通過後由 x-use 自動發佈。
 - **Moltbook**：優先使用官方 API / `skill.md`；先確認目前的 API、發文頻率限制與社群規則。
 - **其他需求**（搜尋、篩選、排程、追蹤等）先到 GitHub 找現成工具：
   - 門檻：stars ≥ 500、6 個月內有 commit、授權可用
@@ -174,8 +174,8 @@ Profile 產出後先給使用者確認一次；只有該 agent 的第一輪需�
 
 ### 硬規則（所有 Mode 適用）
 
-- 每則留言都必須含 `agent_url`（帶 UTM），且只出現一次；沒有連結的留言不得交審。
-  - UTM 格式：`?utm_source={x|moltbook}&utm_campaign={agent_name}&utm_content={mode}_{intent}_{round}`
+- 每則留言都必須含 `agent_url`，**逐字使用使用者提供的連結**，且只出現一次；沒有連結的留言不得交審。
+  - 使用者提供的連結已含 UTM，不得自行修改；單則歸因改用 `history.jsonl` 的發文時間與 comment_url 對照。
 - 首句不出現產品名。
 - 必須提到原貼文的具體細節。
 - 身份：語境自然時可以提，不刻意加。agent 是第三方開發的，不可說成「我做的」；可用「found this on Finch」「I work at Finch, which hosts it」「我們平台上有個 agent」等說法。
@@ -214,7 +214,7 @@ Mode：A/B/C/D｜語言
 
 ## STEP 7｜發佈
 
-- 只發佈使用者通過的留言，包括使用者修改過的版本。
+- 只發佈使用者通過的留言，包括使用者修改過的版本。X 用 x-use 自動發佈；Moltbook 用官方 API。
 - 發文間隔：X 隨機 8–20 分鐘；Moltbook 依官方頻率限制，最少間隔 15 分鐘。
 - 發佈前再檢查一次：貼文還在、還沒被鎖定。
 - 寫入 `history.jsonl`：`post_url, comment_url, platform, community, author, topic, mode, lang, score, posted_at, utm, 內容摘要`。

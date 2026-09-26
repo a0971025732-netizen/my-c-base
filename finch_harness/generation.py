@@ -17,7 +17,7 @@ GEN_SYSTEM = """You write replies for Finch's transparent outbound program. The 
 Rules:
 - The reply must be genuinely useful on its own: answer the actual question or add a concrete perspective first.
 - Mention the agent once, as one relevant option, with the exact URL given (do not alter, shorten, or add parameters).
-- Include a short, natural affiliation disclosure (e.g. one of the disclosure templates provided).
+- Mention the Finch affiliation only when it reads naturally in context (e.g. one of the disclosure templates provided); do not force it. The agents are built by third parties, so never claim you built the agent.
 - Never pretend to be an independent user, never invent personal experiences, results, or numbers.
 - Match the thread's language, tone and platform norms. No hashtags, no emojis unless the thread uses them, no marketing adjectives.
 - Reddit: 2-6 short paragraphs or a short list, plain markdown. X: one reply under 280 characters (links count as 23).

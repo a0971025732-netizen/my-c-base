@@ -1,0 +1,83 @@
+# Problem Profile — FlowCredit (round 1 draft, pending user confirmation)
+agent:
+  name: FlowCredit — Business Risk Intelligence
+  url: "https://www.finchtech.ai/market/chips/agent-e96e9a01-50aa-4686-bd0e-1aa9cdfcf967/run?utm_source=x&utm_medium=social&utm_campaign=agent_promo_opteam&utm_content=post_flowcredit_v1"   # use verbatim
+  developer: TBD            # third-party developer name
+  category: [Web3 business due diligence, On-chain risk analytics, Enterprise decision support]
+  solves:
+    - assess whether an on-chain business has real operating activity (token usage, revenue, compute, customers)
+    - produce an explainable risk grade traceable back to evidence
+    - check evidence readiness: what data is missing before a decision
+    - integrity signals (inconsistent or suspicious operating data)
+    - TAI / CCI indices for comparing businesses   # TBD: meaning of TAI / CCI
+    - deterministic, repeatable assessment (same evidence -> same result)
+  not_for:
+    - investment advice / "should I buy this token" / price prediction
+    - lending or credit decisions
+    - audit opinions or smart-contract security audits
+  target_users:
+    - web3 BD / partnership teams vetting a protocol or vendor
+    - enterprise procurement or risk teams evaluating on-chain suppliers
+    - DePIN / AI-compute / onchain SaaS founders who want to prove real traction
+    - grant committees and ecosystem funds reviewing applicants (non-investment)
+    - onchain analysts doing fundamentals research
+  free_trial:
+    available: TBD
+    allowance: TBD
+  limitations:
+    - output quality depends on the evidence connected
+    - not an investment, lending or audit product
+
+problem_mapping:
+  - user_says_en: "how do you tell if a crypto project has real revenue or just emissions"
+    user_says_zh: "怎麼判斷一個幣圈項目是真的有營收還是只是在發幣"
+    agent_capability: operating evidence assessment
+    intent_level: high
+  - user_says_en: "any tool to verify onchain revenue / real yield claims"
+    user_says_zh: "有沒有工具可以驗證鏈上營收"
+    agent_capability: evidence-backed assessment
+    intent_level: high
+  - user_says_en: "doing due diligence on a web3 partner, what should I check"
+    user_says_zh: "要跟一個 web3 項目合作，該怎麼做盡調"
+    agent_capability: risk grade + evidence readiness
+    intent_level: high
+  - user_says_en: "DePIN project usage numbers look fake"
+    user_says_zh: "這個 DePIN 的使用數據看起來很假"
+    agent_capability: integrity signals
+    intent_level: mid
+  - user_says_en: "how do we prove our protocol's traction to enterprises"
+    user_says_zh: "怎麼向企業客戶證明我們的鏈上業務是真的"
+    agent_capability: explainable assessment report
+    intent_level: high
+  - user_says_en: "wash trading / fake users inflating metrics"
+    user_says_zh: "刷量、假用戶灌數據"
+    agent_capability: integrity signals
+    intent_level: mid
+  - user_says_en: "black box risk scores I can't explain to my team"
+    user_says_zh: "風險評分黑箱，沒辦法跟老闆解釋"
+    agent_capability: traceable, deterministic assessment
+    intent_level: mid
+  - user_says_en: "AI agent tokens — which ones actually have usage"
+    user_says_zh: "AI agent 幣哪些真的有人在用"
+    agent_capability: token usage / compute activity evidence
+    intent_level: mid
+  - user_says_en: "framework for evaluating onchain business fundamentals"
+    user_says_zh: "評估鏈上項目基本面的框架"
+    agent_capability: assessment framework
+    intent_level: mid
+  - user_says_en: "grant committee: how to screen applicants with real activity"
+    user_says_zh: "生態基金怎麼篩選真的有在做事的團隊"
+    agent_capability: evidence readiness
+    intent_level: high
+
+trigger_topics:
+  en: [onchain revenue, real yield, protocol fundamentals, DePIN usage, fake metrics, wash trading, web3 due diligence, AI agent tokens usage, token utility, counterparty risk web3]
+  zh: [鏈上營收, 項目基本面, 刷量, 盡職調查 web3, DePIN 真實使用, AI agent 幣, 代幣實際用途]
+
+intent_signals:
+  high: [asking for solution, looking for tool, asking for recommendation, frustrated with manual work]
+  mid:  [comparing options, sharing workflow, asking how others do it]
+  low:  [general discussion, news, opinions]
+
+# Round-1 hard filter specific to this agent:
+# skip any thread whose core ask is price, buy/sell, or "is X a good investment" (not_for).

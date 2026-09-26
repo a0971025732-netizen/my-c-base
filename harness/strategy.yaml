@@ -56,18 +56,18 @@ quality_gate:
   min_agent_fit: 4
   min_conversation_fit: 4
   max_similarity_to_history: 0.55
-  require_disclosure: true
+  require_disclosure: false   # mention Finch affiliation only when it reads naturally
   max_rewrites: 2
 
 comment_styles:
   - direct_answer              # answer the question, mention agent as one option
   - workflow_walkthrough       # step-by-step how I'd do it, agent in one step
   - comparison                 # tradeoffs between approaches incl. the agent
-  - experience_share           # what worked for us, with disclosure
+  - experience_share           # what worked for us
   - resource_list              # 2-4 resources, agent is one of them
   - clarifying_plus_tip        # ask a clarifying question + give a tip
 
-disclosure_templates:
+disclosure_templates:        # optional phrasing, use only when natural in context
   - "(Disclosure: I'm with Finch.)"
   - "Full disclosure, I work on Finch."
   - "(I help build agents on Finch, so I'm biased.)"
