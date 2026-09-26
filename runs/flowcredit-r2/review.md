@@ -107,10 +107,12 @@ Mode：A Direct Answer（若照分數應降為 D）｜EN
 ## 發佈狀態
 | # | 審核 | 發佈 |
 |---|---|---|
-| 1 | 待裁定 | — |
-| 2 | 待裁定 | — |
-| 3 | 待裁定 | — |
-| 4 | 待裁定 | — ⚠️ ~00:21 UTC 過期 |
-| 5 | 待裁定 | — ⚠️ ~00:30 UTC 過期 |
+| 1 | 通過(Mode A) | ✅ 2026-09-26 21:39 UTC（comment 4d56814f） |
+| 2 | 通過(Mode D) | ✅ 2026-09-26 22:43 UTC（comment 95094d09，於 r3 batch） |
+| 3 | 通過(Mode D) | ✅ 2026-09-26 22:46 UTC（comment 3bfd1561，於 r3 batch） |
+| 4 | 通過(Mode D) | ✅ 2026-09-26 22:49 UTC（comment 56a2257f，於 r3 batch；首貼答錯挑戰已重貼） |
+| 5 | 通過(Mode D) | ✅ 2026-09-26 22:51 UTC（comment 0e3d2ef4，於 r3 batch） |
+
+> 註：#2–#5 原排程間隔發佈，後依使用者指示併入 r3 batch（免逐則審核、壓縮節奏）一併發出。詳見 `runs/flowcredit-r3/review.md`。
 
 發佈流程（每則通過後）：`check <post_id>` → `post <post_id> draft_<n>.txt` → 5 分內 `verify` → `log`；兩則間隔 ≥15 分鐘。
