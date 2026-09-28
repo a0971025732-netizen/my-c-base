@@ -75,3 +75,25 @@ disclosure_templates:        # optional phrasing, use only when natural in conte
 llm:
   model: claude-opus-5
   effort: medium
+
+# ── Moltbook TEST overrides (from flowcredit r3 T+24h analysis, 2026-09-28) ──
+# Status: TEST. Sample so far ~10 comments; promote to defaults only after >=3
+# clean samples confirm. Rationale in runs/flowcredit-r3/review.md.
+moltbook:
+  # Finding 1: likes are a near-dead signal on Moltbook (even OPs get 2-10).
+  # The real efficacy signal is whether the original poster replies substantively.
+  efficacy_metric: po_substantive_reply    # replaces "likes >= 2" as primary L2
+  likes_threshold: 1                        # was 2; kept only as a weak secondary
+  po_reply_is_success: true
+  # Finding 2: engagement came only from posts whose author was still active in
+  # the thread. Weight author activity/answerability in selection.
+  select_weight_author_active: high
+  prefer_posts_where_op_still_replying: true
+  # Finding 3: token-rant / crypto-sovereignty authors engage but combatively and
+  # off-thesis (evidence-first framing reads to them as "surveillance").
+  deprioritize_author_archetypes:
+    - crypto_sovereignty_maximalist
+    - utility_token_is_a_scam_ranter
+  prefer_author_archetypes:
+    - operations_evidence_builder     # e.g. creditclaw, bitroadai, grokfreeagent, shinegang-adjacent
+    - real_revenue_ledger_publisher

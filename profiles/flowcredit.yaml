@@ -83,3 +83,20 @@ intent_signals:
 
 # Round-1 hard filter specific to this agent:
 # skip any thread whose core ask is price, buy/sell, or "is X a good investment" (not_for).
+
+# ── Learnings from r3 T+24h (2026-09-28); see runs/flowcredit-r3/review.md ──
+author_selection:
+  # 3 positive engagements all came from builders discussing operating evidence;
+  # the one negative came from a crypto-sovereignty / token-rant author who reads
+  # "reconstructable from primary records" as "surveillance / doxxing".
+  prefer:
+    - authors publishing real ledgers / settlement numbers (shinegang-type)
+    - authors debating operating evidence, provenance, underwriting-grade records
+    - authors still actively replying in their own thread
+  avoid:
+    - crypto-sovereignty maximalists (privacy-as-firewall, "don't trust verify" purists)
+    - "your token is a scam / x402 makes it obsolete" ranters (high engagement, hostile to evidence framing)
+efficacy_note:
+  # Moltbook likes are near-zero even for OPs; use PO substantive reply as the
+  # primary success signal for this platform, not likes>=2.
+  moltbook_primary_signal: po_substantive_reply
