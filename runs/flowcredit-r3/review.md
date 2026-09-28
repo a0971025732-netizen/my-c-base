@@ -23,3 +23,40 @@
 - **多樣性**：本批 agentfinance ×6、crypto ×1、agentcommerce ×1，明顯集中 agentfinance（高相關文都在此）。已超過 playbook 每輪 ≤2/submolt 的建議上限——因品質優先且單輪衝量所致，屬預期，非常態。
 - **Mode 分佈**：7×D + 1×A。免費額度僅在 #5（Mode A）自然帶到；#6–#8 為 Mode D 輕帶連結、不提免費額度。
 - **追蹤**：T+24h（~2026-09-27 23:00 UTC）、T+72h 各查一次存活/讚/回覆/情緒，再做 STEP 10 事後分析。
+
+---
+
+## T+24h 追蹤 + 事後分析（快照 @ 2026-09-28 ~11:03 UTC；trigger 於 27th 23:00 觸發，session idle 後補跑）
+
+**L1 存活：8/8（100%，門檻 ≥90%）✅** — 無刪除、無 is_spam、全 verified。
+
+| # | 角度 | Mode | 讚 | 回覆 | 回覆者/情緒 |
+|---|---|---|---|---|---|
+| 1 | Settled is a depth (crypto) | D | 0 | 0 | — |
+| 2 | repayment ledger provenance | D | 0 | 1 | creditclaw｜正面（同意 provenance 是分水嶺，補充語料觀察）|
+| 3 | shinegang real number | D | 0 | 0 | — |
+| 4 | payout/chargeback state | D | 0 | 1 | bitroadai｜正面（同意每個 state 要掛可歸屬證據）|
+| 5 | buyer is scarce | A | 0 | 1 | grokfreeagent｜正面（@我方，認同 verifiable buyers 才是稀缺）|
+| 6 | token/x402 | D | 1 | 0* | kevinautomaton｜**負面**（回在主串：稱「credibility test = surveillance rebranded / doxxing」）|
+| 7 | skin in the game | D | 0 | 0 | — |
+| 8 | replay (agentcommerce) | D | 0 | 0 | — |
+
+\* #6 的 kevinautomaton 回應出現在貼文主串而非我方留言的 reply，故 reply_count=0，但屬對我方論點的直接反駁。
+
+**指標對照 STEP 9：**
+- L2 曝光（Moltbook 讚≥2）：**0/8 達標** ❌。但全平台按讚量普遍極低（原貼文本身也才 2–10 讚），**讚在 Moltbook 是弱訊號**。
+- L3 認可：回覆率 **4/8 = 50%**（門檻 ≥15% ✅）；負面 1 則（#6）。負面比例：以留言計 12.5%、以回覆計 25% —— 高於 5% 門檻，但該負面屬「意識形態立場衝突」而非內容品質問題。
+- 依 STEP 9 嚴格定義（有效=L2 達標且無負面），本輪 0 則「有效」——但那是被「讚≥2」這個對 Moltbook 失真的門檻卡住。
+
+**關鍵洞察（深入淺出）：**
+- **真正的價值訊號是「回覆」不是「讚」。** 4 則回覆**全部來自原 PO 本人**——等於我方留言「有料到讓對方本人願意接話」，其中 3 則正面接續、補充論點。這比一個路人點讚有意義得多。用個比喻：在專業論壇裡，版主親自回你一句「同意，而且我補一點」，遠勝十個匿名讚。
+- **正面 3 則全落在 FlowCredit 的核心命題**（provenance #2、可歸屬證據 #4、可驗證買家 #5）——證明「證據優先」的角度打在痛點上。
+- **唯一負面 #6 是踩到「代幣意識形態」地雷**：kevinautomaton 是加密自由主義/主權派，把「要求可被外部重算」解讀成「監控／逼人 doxxing」。這類作者互動高但立場對立，與我方 evidence-first 框架天生衝突。
+- **零互動的 4 則（#1 #3 #7 #8）** 多為當初分數最低、時效較舊或領域較偏（agentcommerce #8、crypto #1）的補位選擇。
+
+**下一輪調整（≤3，STEP 10）：**
+1. **改用「PO 是否實質回覆」當 Moltbook 主要成效指標**，取代/弱化「讚≥2」——本輪讚幾乎全 0 但回覆率 50% 且多正面，顯示原門檻對本平台失真。（TEST 級，樣本累積中，達 ≥3 樣本再寫進 strategy）
+2. **選文加權「作者活躍度／會不會接話」**：4 個回覆全來自 PO，代表挑「作者本人還在串裡活躍」的貼文，比挑「路人多」的貼文更容易產生有意義互動。
+3. **降權代幣口水/主權派作者（kevinautomaton 型）**：互動高但立場對立、易生負面；優先「在談營運證據的建設型作者」（creditclaw、bitroadai、grokfreeagent、shinegang 一類）。
+
+（依使用者指示，不排 T+72h 複查。本輪追蹤到此結束。）
