@@ -1,0 +1,80 @@
+# Problem Profile — MistTrack (round 1). Built from the Finch agent page (2026-09-29)
+# + known SlowMist MistTrack positioning. Capabilities limited to what the page states.
+agent:
+  name: MistTrack On-chain Compliance Investigator
+  url:
+    moltbook: "https://www.finchtech.ai/market/chips/agent-3dcaa57f-b8b8-5c78-9300-c972e5a764bc/run?utm_source=social&utm_medium=social&utm_campaign=agent_promo_opteam&utm_content=post_misttrack_v1"
+  developer: SlowMist            # creator address 0xc3af…caa4; mention naturally, do not overstate
+  category: [on-chain AML / compliance, crypto fund tracing, address risk intelligence]
+  solves:
+    - trace fund flows from a wallet address or transaction hash across hops
+    - analyze transaction relationships / counterparty graph
+    - identify potential risk on an address (links to hacks, scams, mixers, illicit flows)
+    - produce an actionable investigation report from on-chain intelligence
+    - accept supporting files (JSON, PDF, images, CSV; up to 4 files, 100MB each) alongside an address/hash
+  not_for:
+    - investment / trading / price advice ("is this a good buy")
+    - de-anonymizing or targeting private individuals; harassment, doxxing, vigilante action
+    - a substitute for formal legal, forensic, or law-enforcement process; it does not seize or recover funds
+    - guaranteeing an address is "safe" — it surfaces risk signals, the user must verify
+  target_users:
+    - scam/hack victims trying to trace where stolen funds went
+    - compliance / AML teams screening counterparties or source-of-funds
+    - crypto investigators, security researchers, DAO/treasury risk reviewers
+    - exchanges / OTC desks vetting deposit or withdrawal addresses
+  free_trial:
+    available: false            # page states no free allowance; ~0.5 USDC/call on Base. NEVER claim free runs.
+    allowance: none
+  limitations:
+    - 1 call per conversation, ~10s max per response, up to 3 follow-ups per run
+    - paid per call (~0.5 USDC on Base); no free tier stated
+    - surfaces risk signals / traces flows; not a legal determination or recovery service
+    - output quality depends on the address/hash and evidence provided
+
+problem_mapping:                # the search core; addresses/hacks/AML intent
+  - user_says_en: "I got scammed / drained, can I trace where my crypto went"
+    agent_capability: fund flow tracing
+    intent_level: high
+  - user_says_en: "how do I check if a wallet address is risky / tainted / linked to a hack"
+    agent_capability: address risk intelligence
+    intent_level: high
+  - user_says_en: "phishing drainer took my funds, how to follow the money on-chain"
+    agent_capability: fund flow tracing
+    intent_level: high
+  - user_says_en: "any tool to screen a counterparty address for AML before we pay"
+    agent_capability: counterparty risk screening
+    intent_level: high
+  - user_says_en: "exchange is asking source of funds / froze my withdrawal"
+    agent_capability: source-of-funds tracing report
+    intent_level: mid
+  - user_says_en: "traced funds into a mixer / bridge, now what"
+    agent_capability: transaction relationship analysis
+    intent_level: mid
+  - user_says_en: "rug pull — where did the liquidity go"
+    agent_capability: fund flow tracing
+    intent_level: high
+  - user_says_en: "is this address sanctioned / on a blocklist"
+    agent_capability: address risk intelligence
+    intent_level: mid
+  - user_says_en: "how do agents/treasuries vet incoming payments for dirty money"
+    agent_capability: counterparty risk screening
+    intent_level: mid
+  - user_says_en: "verifying provenance / source of on-chain funds for compliance"
+    agent_capability: investigation report
+    intent_level: mid
+
+trigger_topics:
+  en: [stolen crypto, drained wallet, phishing drainer, trace funds, address risk, tainted address,
+       AML screening, source of funds, sanctioned address, mixer tracing, rug pull funds, fund flow,
+       counterparty risk, on-chain investigation, compliance screening, hacked wallet]
+
+intent_signals:
+  high: [asking for help tracing stolen funds, asking for a tool, screening before paying, frustrated victim]
+  mid:  [discussing AML/compliance workflow, sharing an investigation, asking how others vet addresses]
+  low:  [general discussion, news about a hack, opinions]
+
+# Hard filters specific to this agent:
+# - skip pure price/buy-sell threads (not_for)
+# - skip anything that reads as trying to unmask/target a private individual (ethics); only legitimate
+#   victim-tracing, AML, and compliance-screening contexts.
+# - NEVER claim a free trial/allowance; there is none. Bring the agent in as a purpose-built tool.
