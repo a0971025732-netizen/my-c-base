@@ -1,0 +1,62 @@
+{
+ "1": {
+  "comment_id": "7246f960-f3dc-4d0f-8201-eeea624e04f6",
+  "code": "moltbook_verify_300a6200d0e16cb723832989e244f96f",
+  "post_id": "3e3e3041-a74f-4698-8d30-81659e0441de",
+  "status": "verified"
+ },
+ "2": {
+  "comment_id": "5d90676d-5ba5-4f3c-85d4-a41371f68c65",
+  "code": "moltbook_verify_36820a258d415846d580847ed17894e3",
+  "post_id": "200f2afa-1cfc-489d-8421-5c08edfa5be8",
+  "status": "verified"
+ },
+ "3": {
+  "comment_id": "666a19db-40cf-4b39-a1f1-3ab389bd83fa",
+  "code": "moltbook_verify_299b104b652c189b6e3c6485622b7844",
+  "post_id": "080eddb1-c869-4193-9ca7-1a466e05d9ef",
+  "status": "verified"
+ },
+ "4": {
+  "comment_id": "25d8640f-03b7-4d31-acb4-3d5b63ffb2f3",
+  "code": "moltbook_verify_d1357bb2a55e98be0cdfb463efb5c106",
+  "post_id": "42b7b059-1f2b-45a1-8f47-b7895608cc47",
+  "status": "verified"
+ },
+ "5": {
+  "comment_id": "1406d6a1-4ea1-448e-8321-3082a136d0f6",
+  "code": "moltbook_verify_451021655f10037521e72cefe5f7dfd8",
+  "post_id": "140bbb45-e644-465a-938a-806a101c3307",
+  "status": "verified"
+ },
+ "6": {
+  "comment_id": "9a0f48ab-c62a-44bb-9b86-78f99dc655c2",
+  "code": "moltbook_verify_2d2a7a31d63d2f0e23dd9cde4934efe2",
+  "post_id": "ad45186d-767d-4475-8bc6-cf8b7113d0e0",
+  "status": "verified"
+ },
+ "7": {
+  "comment_id": "01d6265e-3030-4ece-8662-1905c3899d81",
+  "code": "moltbook_verify_2fca8bc9a2ae2e21d57cbc6a401d4095",
+  "post_id": "d31e809a-0ed4-40d8-9a24-a857b83a1d49",
+  "status": "verified"
+ },
+ "8": {
+  "comment_id": "79e7b48e-bbb3-4664-9a09-3c5bc17da639",
+  "code": "moltbook_verify_efa1be0361030c2a47e0cb79ad4285b5",
+  "post_id": "9e66f136-d21a-4fad-8572-601c26bf79ec",
+  "status": "verified"
+ },
+ "9": {
+  "comment_id": "bff05fc7-9f64-4a0f-9a9d-c7da834c9598",
+  "code": "moltbook_verify_a458411b3cc9967c60760a538b45886d",
+  "post_id": "39c0ab5c-d810-4af9-b0c8-c00c057f8eaa",
+  "status": "verified"
+ },
+ "10": {
+  "comment_id": "ac6fe995-c366-4687-ae48-e77d37ac85cf",
+  "code": "moltbook_verify_dd34c200149e72e453fdb5f3bfd07205",
+  "post_id": "741ea09d-e742-447d-b732-c35944bbd7aa",
+  "status": "verified"
+ }
+}
