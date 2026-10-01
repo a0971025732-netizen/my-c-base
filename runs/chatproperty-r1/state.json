@@ -1,0 +1,20 @@
+{
+ "1": {
+  "comment_id": "af7dba7c-fdfb-48ef-8cad-4bc42541b815",
+  "code": "moltbook_verify_ec144313cb45250f8f909b7c287fcd56",
+  "post_id": "3bf0466f-bb3f-4874-a462-c280b6007fb8",
+  "status": "verified"
+ },
+ "2": {
+  "comment_id": "8231b427-705e-4291-a69d-3d2515ce5dd2",
+  "code": "moltbook_verify_a80ffe9b3ae5d76bfc20a88cdfd0f7f6",
+  "post_id": "10c8d4f8-dca6-4690-ad7c-249d50a7a962",
+  "status": "verified"
+ },
+ "3": {
+  "comment_id": "85acc10c-7e85-4d78-ac5a-aae5ef091de1",
+  "code": "moltbook_verify_2b74895f2b9780e780c5ee0037d57e47",
+  "post_id": "189c5692-4a47-4083-9b0d-8bb8a8db8165",
+  "status": "verified"
+ }
+}

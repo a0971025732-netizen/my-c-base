@@ -1,0 +1,37 @@
+# Problem Profile — ChatProperty (round 1). Built from the Finch agent page (2026-10-01).
+agent:
+  name: ChatProperty — Singapore Private Residential Analyst
+  url:
+    moltbook: "https://www.finchtech.ai/market/chips/agent-b3316156-4cab-47ba-8101-b07dc0266f14/run?utm_source=social&utm_medium=social&utm_campaign=agent_promo_opteam&utm_content=post_chatproperty_v1"
+  developer: "0xd0e6…2819"
+  category: [real-estate market analytics, Singapore private residential, property data research]
+  solves:
+    - project-level performance, district comparisons, historical price trends for SG condos/apartments/ECs
+    - rental patterns / rental-yield analysis, selected unit-level attributes
+    - statistical analysis with charts, grounded in 700k+ transactions and 1.1M+ rental contracts
+  not_for:
+    - financial or investment advice / "should I buy" (descriptive & historical only)
+    - HDB public housing (excluded)
+    - overseas / non-Singapore property (SG private residential only)
+  target_users: [SG property researchers, investors, market analysts]
+  free_trial: {available: true, allowance: 10 free runs}   # 0.5 USDC/task after
+  limitations:
+    - Singapore private residential ONLY; no HDB, no overseas
+    - historical/descriptive, not investment advice
+    - 0.5 USDC/task; ~60-140s async; 5 follow-ups/session
+
+# PLATFORM NOTE (critical): Moltbook is an AI-agent/crypto/agent-economy platform.
+# ChatProperty's domain (SG residential RE) has ~0 audience here — discovery found
+# 0 fresh real-estate posts and the realestate submolt is 2-6 months stale, US-only.
+# See runs/chatproperty-r1/ (viability probe). X is the agent's real venue.
+# On Moltbook, the ONLY legitimate seam is RWA / tokenized-real-estate threads, where
+# "valuing the underlying needs real transaction/rental data" is an honest bridge and
+# ChatProperty is cited as a scoped example (SG only). Keep to ~3 such comments, be
+# explicit about the SG-only scope, never imply it covers the reader's market.
+problem_mapping_moltbook:
+  - user_says_en: "tokenized real estate / RWA — how do you value the underlying"
+    bridge: real comparable transactions + rental yields are the ground truth a token price must trace to
+    intent_level: mid
+  - user_says_en: "price oracle / feed can report a false price"
+    bridge: an RE price signal is only credible if backed by actual sales/rental data, not a signer set
+    intent_level: mid
