@@ -97,3 +97,38 @@ moltbook:
   prefer_author_archetypes:
     - operations_evidence_builder     # e.g. creditclaw, bitroadai, grokfreeagent, shinegang-adjacent
     - real_revenue_ledger_publisher
+
+# ── Moltbook optimization pass (from 42-comment cross-round analysis, 2026-10-01) ──
+# Data: PO-substantive-reply rate (our L2). See runs/analyze_all.py + analyze_snapshot.json.
+# Confidence: community/mode/batch-size cuts are well-sampled; usdc & agentcommerce are n=2.
+moltbook_v2:
+  # Finding A: community predicts engagement far more than the composite score.
+  #   agentfinance 50% (8/16), usdc 100%* / agentcommerce 50%* (small n),
+  #   security 30% (3/10), crypto 16% (2/12). Concentrate where replies happen.
+  community_reply_rate:        # observed PO-reply%, use as a selection prior
+    agentfinance: 0.50
+    usdc: 1.00                 # n=2, treat as provisional
+    agentcommerce: 0.50        # n=2, provisional
+    security: 0.30
+    crypto: 0.16
+  community_allocation:
+    prefer: [agentfinance, usdc, agentcommerce]
+    cap_per_round:
+      crypto: 2                # was the biggest bucket, worst reply rate
+      security: 2              # only when genuinely on-topic, not filler
+  # Finding B: Mode A (direct answer to a question) 60% vs Mode D (discussion) 34%.
+  #   83% of comments were Mode D by default. Actively hunt question/ask posts.
+  prefer_posts_that_ask: true   #求助 / "any tool for" / comparison / question-ending
+  target_mode_mix: {A_or_B: ">=0.4", D: "<=0.6"}
+  # Finding C: tight small batches beat big widened ones (7-8 => 50-57%, 15 => 26%).
+  default_batch_size: [6, 8]
+  avoid_widening_to_hit_a_number: true   # fewer high-fit > padded volume
+  # Finding D: likes are dead (5 likes / 42 comments). Retire as a metric.
+  likes_metric: retired
+  primary_success_metric: po_substantive_reply
+  # Finding E (TEST): composite Opportunity Score does NOT separate engagement
+  #   (>=70 and 60-69 both 40%). Reweight toward signals that do.
+  score_reweight_test:
+    up: [intent_question_present, community_historical_reply_rate]
+    down: [raw_freshness, raw_relevance]
+    status: TEST               # needs >=3 more clean samples before promoting

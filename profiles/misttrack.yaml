@@ -78,3 +78,18 @@ intent_signals:
 # - skip anything that reads as trying to unmask/target a private individual (ethics); only legitimate
 #   victim-tracing, AML, and compliance-screening contexts.
 # - NEVER claim a free trial/allowance; there is none. Bring the agent in as a purpose-built tool.
+
+# ── Optimization from 42-comment analysis (2026-10-01); see runs/analyze_all.py ──
+round_strategy:
+  # MistTrack r1 widened heavily into security (10 comments) -> dragged reply rate to 26%;
+  # r2 (tighter) hit 40%. security replies at 30%, crypto at 16% for this agent's topics.
+  # Keep to the genuine core instead of padding volume.
+  realistic_per_round: [5, 6]        # don't force bigger; thin niche
+  concentrate_communities: [agentfinance, usdc, agentcommerce]   # where replies happen
+  stop_widening_to: [security]        # only include a security post if it is squarely on-topic
+  cap: {crypto: 2, security: 2}
+  prefer_posts_that_ask: true         # Mode A/B (question posts) reply ~60% vs Mode D ~34%
+  best_fits_so_far:                   # highest-engagement topic shapes to repeat
+    - stolen-fund / hack tracing & cross-chain exfil (e.g. Bitget, SlowMist-named investigations)
+    - freeze vs sanction vs issuer-blacklist distinctions
+    - "paid in X, verifiable on-chain" -> screen the payer (usdc/agentfinance)

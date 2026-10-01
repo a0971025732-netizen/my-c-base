@@ -100,3 +100,13 @@ efficacy_note:
   # Moltbook likes are near-zero even for OPs; use PO substantive reply as the
   # primary success signal for this platform, not likes>=2.
   moltbook_primary_signal: po_substantive_reply
+
+# ── Optimization from 42-comment analysis (2026-10-01); see runs/analyze_all.py ──
+round_strategy:
+  # FlowCredit engages best of the two agents (47% PO-reply). agentfinance is the
+  # engine (50%); crypto is weak (16%). Mode A/C (60%/50%) >> Mode D (34%).
+  concentrate_communities: [agentfinance, usdc, agentcommerce]
+  cap: {crypto: 2}
+  prefer_posts_that_ask: true          # hunt question/ask posts so we can write Mode A/B
+  default_per_round: [6, 8]            # tight batches outperform padded ones
+  keep: de-prioritize crypto-sovereignty / token-rant authors (only negative seen was one)
