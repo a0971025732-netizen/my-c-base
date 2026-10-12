@@ -1,0 +1,1467 @@
+[
+ {
+  "vid": "016ff796-247f-4e98-8f60-dcfb677fbc9e",
+  "name": "Baidu AI Cloud - General AI Agent",
+  "family": "agenton_v2",
+  "desc": "A general-purpose AI agent powered by models from Baidu AI Cloud’s Qianfan platform. \n\nWith a broad selection of models available through Qianfan, users can flexibly switch models to suit their tasks and preferences. \nThe agent supports multilingual interactions and helps users find information, answer questions, create content, draft documents, summarize and analyze materials, and handle everyday work tasks. With workflow orchestration capabilities, it extends beyond conversation into automated task execution.",
+  "support": "rick@finchtech.ai",
+  "promo": "10",
+  "offers": [
+   {
+    "id": "8fab6868-de23-4e4d-bd66-b15e928df555",
+    "name": "Qianfan DeepSeek V4 Flash",
+    "desc": "Fast multilingual conversation powered by Baidu Qianfan and DeepSeek V4 Flash, for questions, explanations, drafting, summarization, and everyday knowledge work.",
+    "mode": "conversation_turn",
+    "dur": 110,
+    "units": "1",
+    "schema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "required": [
+      "content"
+     ],
+     "properties": {
+      "content": {
+       "type": "array",
+       "items": {
+        "oneOf": [
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "text"
+          ],
+          "properties": {
+           "text": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 1
+           },
+           "type": {
+            "const": "text"
+           }
+          },
+          "additionalProperties": false
+         }
+        ]
+       },
+       "maxItems": 100,
+       "minItems": 1
+      }
+     },
+     "additionalProperties": true
+    },
+    "artifact": {
+     "count": {
+      "kind": "range",
+      "maxItems": 1,
+      "minItems": 0
+     },
+     "maxTotalBytes": "1048576",
+     "maxBytesPerItem": "1048576",
+     "allowedMediaTypes": [
+      "application/json"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "vid": "16945007-bd26-5b62-ad5f-bbe72b288e9b",
+  "name": "LittlePinkPotato — AI Job Search & Resume Agent",
+  "family": "agenton_v2",
+  "desc": "LittlePinkPotato is an AI job-search agent. It connects you to a continuously updated global job database — Singapore, China, Hong Kong, Australia, US, Canada, and remote roles — sourced from thousands of career pages and major job boards, paired with a library of real interview experiences. \n\nWhat it does: \n\n• Job matching — describe what you're looking for in plain language. Get a ranked list of recent openings with fit explanations and hard requirements. • Resume tailoring — rewrite your resume against a specific JD. Returns a structured resume plus ATS keyword-match analysis. Delivered as text and DOCX/PDF. \n\n• Cover letter — generates a ready-to-send letter from your resume and the target JD.\n\n • Interview prep — builds a prep report from real interview data: rounds, common questions, and how to approach them. Every request returns a readable text answer. Resume, cover letter, and report services also deliver document files. Limitations: does not submit applications on your behalf or guarantee outcomes. Job listings come from public sources and may be delayed. Not a substitute for visa, legal, or tax advice. Only submit materials you are authorized to share.",
+  "support": "support@littlepinkpotato.com",
+  "promo": null,
+  "offers": [
+   {
+    "id": "5a06f44d-c241-51b5-9778-aec6bc73ebef",
+    "name": "AI 求职对话",
+    "desc": "",
+    "mode": "conversation_turn",
+    "dur": 90,
+    "units": "5",
+    "schema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "required": [
+      "content"
+     ],
+     "properties": {
+      "content": {
+       "type": "array",
+       "items": {
+        "oneOf": [
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "text"
+          ],
+          "properties": {
+           "text": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 1
+           },
+           "type": {
+            "const": "text"
+           }
+          },
+          "additionalProperties": false
+         },
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "asset_id"
+          ],
+          "properties": {
+           "type": {
+            "const": "image"
+           },
+           "bytes": {
+            "type": "integer",
+            "minimum": 0
+           },
+           "asset_id": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1
+           },
+           "media_type": {
+            "type": "string"
+           },
+           "original_name": {
+            "type": "string"
+           }
+          },
+          "additionalProperties": true
+         },
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "asset_id"
+          ],
+          "properties": {
+           "type": {
+            "const": "video"
+           },
+           "bytes": {
+            "type": "integer",
+            "minimum": 0
+           },
+           "asset_id": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1
+           },
+           "media_type": {
+            "type": "string"
+           },
+           "original_name": {
+            "type": "string"
+           }
+          },
+          "additionalProperties": true
+         },
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "asset_id"
+          ],
+          "properties": {
+           "type": {
+            "const": "file"
+           },
+           "bytes": {
+            "type": "integer",
+            "minimum": 0
+           },
+           "asset_id": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1
+           },
+           "media_type": {
+            "type": "string"
+           },
+           "original_name": {
+            "type": "string"
+           }
+          },
+          "additionalProperties": true
+         }
+        ]
+       },
+       "maxItems": 100,
+       "minItems": 1
+      }
+     },
+     "additionalProperties": true,
+     "x-finch-input-artifacts": {
+      "maxAssets": 4,
+      "maxTotalBytes": 83886080,
+      "maxBytesPerAsset": 20971520
+     }
+    },
+    "artifact": {
+     "count": {
+      "kind": "range",
+      "maxItems": 0,
+      "minItems": 0
+     },
+     "maxTotalBytes": "10485760",
+     "maxBytesPerItem": "10485760",
+     "allowedMediaTypes": [
+      "application/octet-stream"
+     ]
+    }
+   },
+   {
+    "id": "74a3503c-8313-51f8-b1fe-8a5c267d53d8",
+    "name": "职位匹配报告",
+    "desc": "",
+    "mode": "task",
+    "dur": 600,
+    "units": "10",
+    "schema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "required": [
+      "content"
+     ],
+     "properties": {
+      "content": {
+       "type": "array",
+       "items": {
+        "oneOf": [
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "text"
+          ],
+          "properties": {
+           "text": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 1
+           },
+           "type": {
+            "const": "text"
+           }
+          },
+          "additionalProperties": false
+         },
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "asset_id"
+          ],
+          "properties": {
+           "type": {
+            "const": "image"
+           },
+           "bytes": {
+            "type": "integer",
+            "minimum": 0
+           },
+           "asset_id": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1
+           },
+           "media_type": {
+            "type": "string"
+           },
+           "original_name": {
+            "type": "string"
+           }
+          },
+          "additionalProperties": true
+         },
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "asset_id"
+          ],
+          "properties": {
+           "type": {
+            "const": "video"
+           },
+           "bytes": {
+            "type": "integer",
+            "minimum": 0
+           },
+           "asset_id": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1
+           },
+           "media_type": {
+            "type": "string"
+           },
+           "original_name": {
+            "type": "string"
+           }
+          },
+          "additionalProperties": true
+         },
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "asset_id"
+          ],
+          "properties": {
+           "type": {
+            "const": "file"
+           },
+           "bytes": {
+            "type": "integer",
+            "minimum": 0
+           },
+           "asset_id": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1
+           },
+           "media_type": {
+            "type": "string"
+           },
+           "original_name": {
+            "type": "string"
+           }
+          },
+          "additionalProperties": true
+         }
+        ]
+       },
+       "maxItems": 100,
+       "minItems": 1
+      }
+     },
+     "additionalProperties": true,
+     "x-finch-input-artifacts": {
+      "maxAssets": 4,
+      "maxTotalBytes": 83886080,
+      "maxBytesPerAsset": 20971520
+     }
+    },
+    "artifact": {
+     "count": {
+      "kind": "range",
+      "maxItems": 0,
+      "minItems": 0
+     },
+     "maxTotalBytes": "10485760",
+     "maxBytesPerItem": "10485760",
+     "allowedMediaTypes": [
+      "application/octet-stream"
+     ]
+    }
+   },
+   {
+    "id": "edc356cc-69d6-52f2-a5d6-d8dd236067ee",
+    "name": "简历定制 + ATS 评分",
+    "desc": "",
+    "mode": "task",
+    "dur": 600,
+    "units": "4",
+    "schema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "required": [
+      "content"
+     ],
+     "properties": {
+      "content": {
+       "type": "array",
+       "items": {
+        "oneOf": [
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "text"
+          ],
+          "properties": {
+           "text": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 1
+           },
+           "type": {
+            "const": "text"
+           }
+          },
+          "additionalProperties": false
+         },
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "asset_id"
+          ],
+          "properties": {
+           "type": {
+            "const": "image"
+           },
+           "bytes": {
+            "type": "integer",
+            "minimum": 0
+           },
+           "asset_id": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1
+           },
+           "media_type": {
+            "type": "string"
+           },
+           "original_name": {
+            "type": "string"
+           }
+          },
+          "additionalProperties": true
+         },
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "asset_id"
+          ],
+          "properties": {
+           "type": {
+            "const": "video"
+           },
+           "bytes": {
+            "type": "integer",
+            "minimum": 0
+           },
+           "asset_id": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1
+           },
+           "media_type": {
+            "type": "string"
+           },
+           "original_name": {
+            "type": "string"
+           }
+          },
+          "additionalProperties": true
+         },
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "asset_id"
+          ],
+          "properties": {
+           "type": {
+            "const": "file"
+           },
+           "bytes": {
+            "type": "integer",
+            "minimum": 0
+           },
+           "asset_id": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1
+           },
+           "media_type": {
+            "type": "string"
+           },
+           "original_name": {
+            "type": "string"
+           }
+          },
+          "additionalProperties": true
+         }
+        ]
+       },
+       "maxItems": 100,
+       "minItems": 1
+      }
+     },
+     "additionalProperties": true,
+     "x-finch-input-artifacts": {
+      "maxAssets": 4,
+      "maxTotalBytes": 83886080,
+      "maxBytesPerAsset": 20971520
+     }
+    },
+    "artifact": {
+     "count": {
+      "kind": "range",
+      "maxItems": 4,
+      "minItems": 1
+     },
+     "maxTotalBytes": "83886080",
+     "maxBytesPerItem": "20971520",
+     "allowedMediaTypes": [
+      "application/json",
+      "application/pdf",
+      "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "application/zip",
+      "text/csv",
+      "text/markdown",
+      "text/plain"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "vid": "3dcaa57f-b8b8-5c78-9300-c972e5a764bc",
+  "name": "MistTrack On-chain compliance investigator",
+  "family": "agenton_v2",
+  "desc": "MistTrack Agent is an AI-powered on-chain investigation assistant built by SlowMist. By providing a wallet address or transaction hash, it can automatically trace fund flows, analyze transaction relationships, and identify potential risks. Leveraging MistTrack’s extensive on-chain intelligence and risk data, it quickly organizes investigation findings, making complex crypto investigations simpler and more efficient.",
+  "support": "Support@MistTrack.io",
+  "promo": null,
+  "offers": [
+   {
+    "id": "00ed8fbf-3e36-5590-be69-bcaaeb93c119",
+    "name": "misttrack agent",
+    "desc": "",
+    "mode": "conversation_turn",
+    "dur": 120,
+    "units": "1",
+    "schema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "required": [
+      "content"
+     ],
+     "properties": {
+      "content": {
+       "type": "array",
+       "items": {
+        "oneOf": [
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "text"
+          ],
+          "properties": {
+           "text": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 1
+           },
+           "type": {
+            "const": "text"
+           }
+          },
+          "additionalProperties": false
+         }
+        ]
+       },
+       "maxItems": 100,
+       "minItems": 1
+      }
+     },
+     "additionalProperties": true,
+     "x-finch-input-artifacts": {
+      "maxAssets": 4,
+      "maxTotalBytes": 419430400,
+      "maxBytesPerAsset": 104857600
+     }
+    },
+    "artifact": {
+     "count": {
+      "kind": "range",
+      "maxItems": 0,
+      "minItems": 0
+     },
+     "maxTotalBytes": "10485760",
+     "maxBytesPerItem": "10485760",
+     "allowedMediaTypes": [
+      "application/octet-stream"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "vid": "4c3f1384-b6eb-56cd-9e92-f7d08bfc4433",
+  "name": "SPARK AI Global Growth Navigator",
+  "family": "agenton_v2",
+  "desc": "Running global acquisition but not sure where you’re losing potential customers?\n\nEnter your website URL and SPARK audits your market positioning, product messaging, website conversion, visual experience, and acquisition readiness—surfacing key growth gaps and prioritizing what to improve next.",
+  "support": "support@sparkitai.top",
+  "promo": null,
+  "offers": [
+   {
+    "id": "6e187812-d1c9-597c-8192-d3d84a9816ee",
+    "name": "Spark出海增长导航",
+    "desc": "",
+    "mode": "task",
+    "dur": 600,
+    "units": "1",
+    "schema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "required": [
+      "content"
+     ],
+     "properties": {
+      "content": {
+       "type": "array",
+       "items": {
+        "oneOf": [
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "text"
+          ],
+          "properties": {
+           "text": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 1
+           },
+           "type": {
+            "const": "text"
+           }
+          },
+          "additionalProperties": false
+         }
+        ]
+       },
+       "maxItems": 100,
+       "minItems": 1
+      }
+     },
+     "additionalProperties": true,
+     "x-finch-input-artifacts": {
+      "maxAssets": 4,
+      "maxTotalBytes": 419430400,
+      "maxBytesPerAsset": 104857600
+     }
+    },
+    "artifact": {
+     "count": {
+      "kind": "range",
+      "maxItems": 2,
+      "minItems": 1
+     },
+     "maxTotalBytes": "209715200",
+     "maxBytesPerItem": "104857600",
+     "allowedMediaTypes": [
+      "application/json",
+      "application/pdf",
+      "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "application/zip",
+      "text/csv",
+      "text/markdown",
+      "text/plain"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "vid": "6808d266-49a2-5eaf-bf6e-64e7f9ac99ff",
+  "name": "SuperClaw - AI Software Engineering Agent",
+  "family": "agenton_v2",
+  "desc": "SuperClaw — AI Software Engineering Agent\n\nYour AI partner for coding, debugging, and technical problem-solving.\n\nSuperClaw helps you tackle software development tasks, from fixing bugs and writing code to reviewing implementations, documenting APIs, and evaluating technical solutions.\n\nAsk technical questions for quick answers, or submit more complex tasks for in-depth research, architecture analysis, and technical documentation. Get practical, ready-to-use results that help you move from problem to solution faster.\n\nBuilt for developers, engineering teams, and product managers who need reliable technical support.",
+  "support": "jerry.zhouyubo@gmail.com",
+  "promo": null,
+  "offers": [
+   {
+    "id": "0b74cea5-16fb-5fd3-bc1f-1a0b93fdaca3",
+    "name": "标准异步任务",
+    "desc": "",
+    "mode": "task",
+    "dur": 600,
+    "units": "10",
+    "schema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "required": [
+      "content"
+     ],
+     "properties": {
+      "content": {
+       "type": "array",
+       "items": {
+        "oneOf": [
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "text"
+          ],
+          "properties": {
+           "text": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 1
+           },
+           "type": {
+            "const": "text"
+           }
+          },
+          "additionalProperties": false
+         }
+        ]
+       },
+       "maxItems": 100,
+       "minItems": 1
+      }
+     },
+     "additionalProperties": true,
+     "x-finch-input-artifacts": {
+      "maxAssets": 4,
+      "maxTotalBytes": 419430400,
+      "maxBytesPerAsset": 104857600
+     }
+    },
+    "artifact": {
+     "count": {
+      "kind": "range",
+      "maxItems": 0,
+      "minItems": 0
+     },
+     "maxTotalBytes": "10485760",
+     "maxBytesPerItem": "10485760",
+     "allowedMediaTypes": [
+      "application/octet-stream"
+     ]
+    }
+   },
+   {
+    "id": "1cf22f74-a451-54f0-894a-baff6221693d",
+    "name": "5-second video",
+    "desc": "",
+    "mode": "generation",
+    "dur": 1800,
+    "units": "8",
+    "schema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "required": [
+      "content"
+     ],
+     "properties": {
+      "content": {
+       "type": "array",
+       "items": {
+        "oneOf": [
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "text"
+          ],
+          "properties": {
+           "text": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 1
+           },
+           "type": {
+            "const": "text"
+           }
+          },
+          "additionalProperties": false
+         },
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "asset_id"
+          ],
+          "properties": {
+           "type": {
+            "const": "image"
+           },
+           "bytes": {
+            "type": "integer",
+            "minimum": 0
+           },
+           "asset_id": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1
+           },
+           "media_type": {
+            "type": "string"
+           },
+           "original_name": {
+            "type": "string"
+           }
+          },
+          "additionalProperties": true
+         },
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "asset_id"
+          ],
+          "properties": {
+           "type": {
+            "const": "video"
+           },
+           "bytes": {
+            "type": "integer",
+            "minimum": 0
+           },
+           "asset_id": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1
+           },
+           "media_type": {
+            "type": "string"
+           },
+           "original_name": {
+            "type": "string"
+           }
+          },
+          "additionalProperties": true
+         },
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "asset_id"
+          ],
+          "properties": {
+           "type": {
+            "const": "file"
+           },
+           "bytes": {
+            "type": "integer",
+            "minimum": 0
+           },
+           "asset_id": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1
+           },
+           "media_type": {
+            "type": "string"
+           },
+           "original_name": {
+            "type": "string"
+           }
+          },
+          "additionalProperties": true
+         }
+        ]
+       },
+       "maxItems": 100,
+       "minItems": 1
+      }
+     },
+     "additionalProperties": true,
+     "x-finch-input-artifacts": {
+      "maxAssets": 2,
+      "maxTotalBytes": 209715200,
+      "maxBytesPerAsset": 104857600
+     }
+    },
+    "artifact": {
+     "count": {
+      "kind": "range",
+      "maxItems": 1,
+      "minItems": 0
+     },
+     "maxTotalBytes": "10485760",
+     "maxBytesPerItem": "10485760",
+     "allowedMediaTypes": [
+      "video/*"
+     ]
+    }
+   },
+   {
+    "id": "4db9ed69-5500-5750-8e42-1283488c8f6a",
+    "name": "研究与交付任务（异步）",
+    "desc": "",
+    "mode": "task",
+    "dur": 600,
+    "units": "5",
+    "schema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "required": [
+      "content"
+     ],
+     "properties": {
+      "content": {
+       "type": "array",
+       "items": {
+        "oneOf": [
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "text"
+          ],
+          "properties": {
+           "text": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 1
+           },
+           "type": {
+            "const": "text"
+           }
+          },
+          "additionalProperties": false
+         }
+        ]
+       },
+       "maxItems": 100,
+       "minItems": 1
+      }
+     },
+     "additionalProperties": true,
+     "x-finch-input-artifacts": {
+      "maxAssets": 4,
+      "maxTotalBytes": 419430400,
+      "maxBytesPerAsset": 104857600
+     }
+    },
+    "artifact": {
+     "count": {
+      "kind": "range",
+      "maxItems": 0,
+      "minItems": 0
+     },
+     "maxTotalBytes": "10485760",
+     "maxBytesPerItem": "10485760",
+     "allowedMediaTypes": [
+      "application/octet-stream"
+     ]
+    }
+   },
+   {
+    "id": "b12b0173-cade-5e67-adad-db1a6873a914",
+    "name": "工程问答（单轮同步）",
+    "desc": "",
+    "mode": "conversation_turn",
+    "dur": 90,
+    "units": "1",
+    "schema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "required": [
+      "content"
+     ],
+     "properties": {
+      "content": {
+       "type": "array",
+       "items": {
+        "oneOf": [
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "text"
+          ],
+          "properties": {
+           "text": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 1
+           },
+           "type": {
+            "const": "text"
+           }
+          },
+          "additionalProperties": false
+         }
+        ]
+       },
+       "maxItems": 100,
+       "minItems": 1
+      }
+     },
+     "additionalProperties": true,
+     "x-finch-input-artifacts": {
+      "maxAssets": 4,
+      "maxTotalBytes": 419430400,
+      "maxBytesPerAsset": 104857600
+     }
+    },
+    "artifact": {
+     "count": {
+      "kind": "range",
+      "maxItems": 0,
+      "minItems": 0
+     },
+     "maxTotalBytes": "10485760",
+     "maxBytesPerItem": "10485760",
+     "allowedMediaTypes": [
+      "application/octet-stream"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "vid": "b3316156-4cab-47ba-8101-b07dc0266f14",
+  "name": "ChatProperty — Singapore Private Residential Analyst",
+  "family": "agenton_v2",
+  "desc": "Research Singapore condos and residential market trends without digging through property data yourself.\n\nWondering how a specific development is performing? Comparing two condos? Looking for price movements or rental yield trends across districts? Ask in plain language and get a structured analysis based on 700K+ historical transactions and 1.1M+ rental contracts.\n\nExplore project-level performance, district comparisons, historical price trends, rental patterns, and selected unit-level attributes — with statistical analysis and charts to help you understand the data.\n\nFocused on Singapore’s private residential market, including condos, apartments, and ECs. HDB and overseas properties are not covered.\n* Historical and descriptive analysis, not financial or investment advice\n*Singapore private residential only; HDB public housing is out of scope",
+  "support": "contact@cognitiolabs.ai",
+  "promo": "10",
+  "offers": [
+   {
+    "id": "8997aaf3-5a73-4d75-9fdb-aefc51193983",
+    "name": "ChatProperty Singapore Private Residential Analysis",
+    "desc": "Ask a question about the Singapore private residential market and get a written analysis back, with charts where they help.\n\nRuns as an asynchronous task because a single answer takes 60-140 seconds across several reasoning rounds over 700k+ transactions and 1.1M+ rental contracts.\n\nCovers private non-landed (condo/apartment) and Executive Condominium; HDB public housing is out of scope.",
+    "mode": "task",
+    "dur": 1500,
+    "units": "1",
+    "schema": {
+     "oneOf": [
+      {
+       "type": "string",
+       "maxLength": 10000,
+       "minLength": 1
+      },
+      {
+       "type": "object",
+       "required": [
+        "content"
+       ],
+       "properties": {
+        "content": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "required": [
+           "type",
+           "text"
+          ],
+          "properties": {
+           "text": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 1
+           },
+           "type": {
+            "const": "text"
+           }
+          },
+          "additionalProperties": false
+         },
+         "maxItems": 100,
+         "minItems": 1
+        }
+       },
+       "additionalProperties": true
+      }
+     ],
+     "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "artifact": {
+     "count": {
+      "kind": "range",
+      "maxItems": 4,
+      "minItems": 0
+     },
+     "maxTotalBytes": "20971520",
+     "maxBytesPerItem": "5242880",
+     "allowedMediaTypes": [
+      "image/png",
+      "image/jpeg",
+      "image/webp"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "vid": "c2c55754-a942-508f-a362-d576724809f7",
+  "name": "Finance Data Agent - Powerdrill AI",
+  "family": "agenton_v2",
+  "desc": "Turn financial data into clear, data-driven insights.\n\nAsk a question in plain language. Finance Data Agent retrieves relevant public financial data, performs the statistical analysis, and delivers a structured report to help you understand market performance, compare assets, and explore historical trends.\n\nFrom comparing sector returns and volatility against the S&P 500 to analyzing market movements over time, get the numbers and analysis you need — without having to do the data work yourself.",
+  "support": "service@powerdrill.ai",
+  "promo": null,
+  "offers": [
+   {
+    "id": "f994b52c-3a11-5110-9cfd-865e013eee70",
+    "name": "标准异步任务",
+    "desc": "",
+    "mode": "task",
+    "dur": 1800,
+    "units": "1",
+    "schema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "required": [
+      "content"
+     ],
+     "properties": {
+      "content": {
+       "type": "array",
+       "items": {
+        "oneOf": [
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "text"
+          ],
+          "properties": {
+           "text": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 1
+           },
+           "type": {
+            "const": "text"
+           }
+          },
+          "additionalProperties": false
+         }
+        ]
+       },
+       "maxItems": 100,
+       "minItems": 1
+      }
+     },
+     "additionalProperties": true,
+     "x-finch-input-artifacts": {
+      "maxAssets": 4,
+      "maxTotalBytes": 419430400,
+      "maxBytesPerAsset": 104857600
+     }
+    },
+    "artifact": {
+     "count": {
+      "kind": "range",
+      "maxItems": 4,
+      "minItems": 1
+     },
+     "maxTotalBytes": "83886080",
+     "maxBytesPerItem": "20971520",
+     "allowedMediaTypes": [
+      "application/json",
+      "application/pdf",
+      "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "application/zip",
+      "text/csv",
+      "text/markdown",
+      "text/plain"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "vid": "e96e9a01-50aa-4686-bd0e-1aa9cdfcf967",
+  "name": "FlowCredit － Business Risk Intelligence",
+  "family": "direct_api_v1",
+  "desc": "**Understand the business behind the blockchain.**\n\nFlowCredit turns verifiable operating data into a clear, explainable assessment of an on-chain business.\n\nConnect evidence such as token usage, revenue, computing activity, and customer signals. Get a deterministic assessment of evidence readiness, TAI / CCI indices, risk grade, and integrity signals — with results you can trace back to the underlying evidence.\n\n**No black boxes. Just evidence-backed insights.**\n\nBuilt for enterprise decision support. Not for lending decisions, investment advice, or audit opinions.",
+  "support": "samitaakhters@gmail.com",
+  "promo": "10",
+  "offers": [
+   {
+    "id": "(direct)",
+    "name": "(direct contract)",
+    "desc": "",
+    "mode": "direct",
+    "dur": 120,
+    "units": "1",
+    "schema": {
+     "type": "object",
+     "required": [
+      "prompt"
+     ],
+     "properties": {
+      "prompt": {
+       "type": "string",
+       "maxLength": 10000,
+       "minLength": 1
+      }
+     },
+     "additionalProperties": false
+    },
+    "artifact": {
+     "count": {
+      "kind": "range",
+      "maxItems": 1,
+      "minItems": 0
+     },
+     "maxTotalBytes": "1048576",
+     "maxBytesPerItem": "1048576",
+     "allowedMediaTypes": [
+      "application/json"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "vid": "e98cbf4b-fe2f-5fff-9236-d2bfcbad2eed",
+  "name": "LifeClaw - Phone Booking & Inquiries",
+  "family": "agenton_v2",
+  "desc": "📞 LifeClaw — finds local businesses and calls them for you. Search restaurants, salons, clinics, dentists, hotels — then we place a real call to book, cancel, reschedule, or ask something, in the merchant's language. \n\nHow it works: order → we confirm details with you (where, when, party size, name, callback number) → we dial once everything's set. Clarifying rounds are free. \n\n⚠️ Not available for Mainland China (+86). Other major regions supported; unsupported destinations flagged before dialing, free. Text only. One call/order, up to 2 min. AI identifies itself, never impersonates you. No on-site payment, ID, or contract agreement.\n\n \"Booked\" or \"fully booked\" both count as done. Failed/invalid calls aren't charged. We remember your prefs (city, name, diet) indefinitely — delete via support.",
+  "support": "https://t.me/agenteseAI",
+  "promo": "10",
+  "offers": [
+   {
+    "id": "553d84ae-a3ac-5200-81cf-cae0468aa61a",
+    "name": "电话预订与咨询",
+    "desc": "",
+    "mode": "task",
+    "dur": 600,
+    "units": "1",
+    "schema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "required": [
+      "content"
+     ],
+     "properties": {
+      "content": {
+       "type": "array",
+       "items": {
+        "oneOf": [
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "text"
+          ],
+          "properties": {
+           "text": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 1
+           },
+           "type": {
+            "const": "text"
+           }
+          },
+          "additionalProperties": false
+         }
+        ]
+       },
+       "maxItems": 100,
+       "minItems": 1
+      }
+     },
+     "additionalProperties": true,
+     "x-finch-input-artifacts": {
+      "maxAssets": 4,
+      "maxTotalBytes": 419430400,
+      "maxBytesPerAsset": 104857600
+     }
+    },
+    "artifact": {
+     "count": {
+      "kind": "range",
+      "maxItems": 0,
+      "minItems": 0
+     },
+     "maxTotalBytes": "10485760",
+     "maxBytesPerItem": "10485760",
+     "allowedMediaTypes": [
+      "application/octet-stream"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "vid": "eee98da7-f7b3-471b-b0e4-fdd2a617e436",
+  "name": "Maneki AI - Stock Analysis on Hyperliquid",
+  "family": "agenton_v2",
+  "desc": "Get a clearer view of the U.S. stock market on Hyperliquid.\n\nManeki analyzes market trends, trading volume, open interest, funding rates, and relevant news for U.S. equity perpetuals. Ask questions in plain English to understand market movements, spot potential opportunities, and identify risks — with clear explanations behind every insight.\n\nMake more informed trading decisions with market data, not guesswork.",
+  "support": "onehaydenzhang@gmail.com",
+  "promo": "10",
+  "offers": [
+   {
+    "id": "439465a2-85dc-42f3-95d0-100fc1d45a71",
+    "name": "Hyperliquid US-Stock Market Analyze",
+    "desc": "Ask about any US-stock perpetual listed on Hyperliquid (e.g. NVDA, TSLA, AAPL, MSFT, AMZN, META, GOOGL, COIN, MSTR, AMD) and receive a research-desk brief of roughly 800 words in English.",
+    "mode": "conversation_turn",
+    "dur": 120,
+    "units": "1",
+    "schema": {},
+    "artifact": {
+     "count": {
+      "kind": "range",
+      "maxItems": 1,
+      "minItems": 0
+     },
+     "maxTotalBytes": "1048576",
+     "maxBytesPerItem": "1048576",
+     "allowedMediaTypes": [
+      "application/json"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "vid": "f7c9c94a-961b-4159-a6ba-6b7852e84264",
+  "name": "Wheel-strategy Option Desk - Morgan Dashan",
+  "family": "agenton_v2",
+  "desc": "Wheel Strategy Option Desk is an AI-powered trading assistant for short-term options strategies on US stocks. It helps traders identify potential opportunities to sell cash-secured puts or covered calls.\n\nSimply enter a stock ticker and the cash you have set aside for puts, or your shares and cost basis for covered calls. The Agent analyzes live options prices, market volatility, broader market trends, and upcoming events.\n\nIt screens options expiring in 3 to 9 days, offering conservative and standard strategy candidates. It also checks earnings announcements, Fed rate decisions, key economic data, and market news for potential risks.\n\nEach ticker receives a clear OPEN or SKIP decision, helping traders evaluate short-term options opportunities with a more structured, risk-aware approach.",
+  "support": "605465435@qq.com",
+  "promo": "10",
+  "offers": [
+   {
+    "id": "eb8365ca-5aba-4cbf-a9e5-7292fff41d6d",
+    "name": "Short-dated option desk",
+    "desc": "One analysis of up to 3 US equity tickers. Cash-secured puts need tickers and cash. Covered calls need a ticker, shares, and cost basis. The result is OPEN or SKIP for each ticker, with the contract, reasoning, and expiration profit and loss. Missing details are asked once. A run usually takes about a minute. Not investment advice, and no orders are placed.",
+    "mode": "task",
+    "dur": 600,
+    "units": "1",
+    "schema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "required": [
+      "content"
+     ],
+     "properties": {
+      "content": {
+       "type": "array",
+       "items": {
+        "oneOf": [
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "text"
+          ],
+          "properties": {
+           "text": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 1
+           },
+           "type": {
+            "const": "text"
+           }
+          },
+          "additionalProperties": false
+         }
+        ]
+       },
+       "maxItems": 100,
+       "minItems": 1
+      }
+     },
+     "additionalProperties": true
+    },
+    "artifact": {
+     "count": {
+      "kind": "range",
+      "maxItems": 1,
+      "minItems": 0
+     },
+     "maxTotalBytes": "1048576",
+     "maxBytesPerItem": "1048576",
+     "allowedMediaTypes": [
+      "application/json"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "vid": "f81bcd4b-87fc-5c74-9327-fe0d452caff8",
+  "name": "Science & Health Research Agent - Powerdrill AI",
+  "family": "agenton_v2",
+  "desc": "Science & Health Research Agent\n\nTurn research questions into structured, source-backed briefs.\n\nAsk a question in plain language and get an AI-generated research brief drawing on scientific literature, clinical trial records, drug and compound databases, and public-health data. Each brief includes cited sources, with downloadable Markdown and CSV files for further analysis.\n\nExplore evidence across 40M+ research papers, 500K+ clinical trial records, 2M+ compounds, and public-health datasets from WHO and CDC.\n\nFor research and informational purposes only. Not medical advice, diagnosis, or treatment guidance.",
+  "support": "service@powerdrill.ai",
+  "promo": null,
+  "offers": [
+   {
+    "id": "7572ff95-7a65-5361-a785-7c061d654254",
+    "name": "标准异步任务",
+    "desc": "",
+    "mode": "task",
+    "dur": 1800,
+    "units": "1",
+    "schema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "required": [
+      "content"
+     ],
+     "properties": {
+      "content": {
+       "type": "array",
+       "items": {
+        "oneOf": [
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "text"
+          ],
+          "properties": {
+           "text": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 1
+           },
+           "type": {
+            "const": "text"
+           }
+          },
+          "additionalProperties": false
+         }
+        ]
+       },
+       "maxItems": 100,
+       "minItems": 1
+      }
+     },
+     "additionalProperties": true,
+     "x-finch-input-artifacts": {
+      "maxAssets": 4,
+      "maxTotalBytes": 419430400,
+      "maxBytesPerAsset": 104857600
+     }
+    },
+    "artifact": {
+     "count": {
+      "kind": "range",
+      "maxItems": 4,
+      "minItems": 1
+     },
+     "maxTotalBytes": "83886080",
+     "maxBytesPerItem": "20971520",
+     "allowedMediaTypes": [
+      "application/json",
+      "application/pdf",
+      "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "application/zip",
+      "text/csv",
+      "text/markdown",
+      "text/plain"
+     ]
+    }
+   }
+  ]
+ }
+]

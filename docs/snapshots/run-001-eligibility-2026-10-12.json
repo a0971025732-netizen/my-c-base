@@ -1,0 +1,395 @@
+[
+ {
+  "agent": "Baidu AI Cloud - General AI Agent",
+  "offer": "Qianfan DeepSeek V4 Flash",
+  "mode": "conversation_turn",
+  "units": "1",
+  "promo_listed": "10",
+  "http": "200",
+  "resp": {
+   "paid": {
+    "reservedUnits": "0",
+    "availableUnits": "0"
+   },
+   "offerId": "8fab6868-de23-4e4d-bd66-b15e928df555",
+   "quantity": 1,
+   "promotion": {
+    "expiresAt": "2026-11-11T05:45:05Z",
+    "dailyResetsAt": null,
+    "dailyRemaining": null,
+    "personalRemaining": "10",
+    "availableOperations": "10"
+   },
+   "fundingSource": "promotion",
+   "requiredUnits": "1",
+   "merchantSelfTest": false,
+   "serviceVersionId": "016ff796-247f-4e98-8f60-dcfb677fbc9e"
+  }
+ },
+ {
+  "agent": "LittlePinkPotato — AI Job Search & Resume Agent",
+  "offer": "AI 求职对话",
+  "mode": "conversation_turn",
+  "units": "5",
+  "promo_listed": null,
+  "http": "200",
+  "resp": {
+   "paid": {
+    "reservedUnits": "0",
+    "availableUnits": "0"
+   },
+   "offerId": "5a06f44d-c241-51b5-9778-aec6bc73ebef",
+   "quantity": 1,
+   "promotion": null,
+   "fundingSource": "insufficient",
+   "requiredUnits": "5",
+   "merchantSelfTest": false,
+   "serviceVersionId": "16945007-bd26-5b62-ad5f-bbe72b288e9b"
+  }
+ },
+ {
+  "agent": "LittlePinkPotato — AI Job Search & Resume Agent",
+  "offer": "职位匹配报告",
+  "mode": "task",
+  "units": "10",
+  "promo_listed": null,
+  "http": "200",
+  "resp": {
+   "paid": {
+    "reservedUnits": "0",
+    "availableUnits": "0"
+   },
+   "offerId": "74a3503c-8313-51f8-b1fe-8a5c267d53d8",
+   "quantity": 1,
+   "promotion": null,
+   "fundingSource": "insufficient",
+   "requiredUnits": "10",
+   "merchantSelfTest": false,
+   "serviceVersionId": "16945007-bd26-5b62-ad5f-bbe72b288e9b"
+  }
+ },
+ {
+  "agent": "LittlePinkPotato — AI Job Search & Resume Agent",
+  "offer": "简历定制 + ATS 评分",
+  "mode": "task",
+  "units": "4",
+  "promo_listed": null,
+  "http": "200",
+  "resp": {
+   "paid": {
+    "reservedUnits": "0",
+    "availableUnits": "0"
+   },
+   "offerId": "edc356cc-69d6-52f2-a5d6-d8dd236067ee",
+   "quantity": 1,
+   "promotion": null,
+   "fundingSource": "insufficient",
+   "requiredUnits": "4",
+   "merchantSelfTest": false,
+   "serviceVersionId": "16945007-bd26-5b62-ad5f-bbe72b288e9b"
+  }
+ },
+ {
+  "agent": "MistTrack On-chain compliance investigator",
+  "offer": "misttrack agent",
+  "mode": "conversation_turn",
+  "units": "1",
+  "promo_listed": null,
+  "http": "200",
+  "resp": {
+   "paid": {
+    "reservedUnits": "0",
+    "availableUnits": "0"
+   },
+   "offerId": "00ed8fbf-3e36-5590-be69-bcaaeb93c119",
+   "quantity": 1,
+   "promotion": null,
+   "fundingSource": "insufficient",
+   "requiredUnits": "1",
+   "merchantSelfTest": false,
+   "serviceVersionId": "3dcaa57f-b8b8-5c78-9300-c972e5a764bc"
+  }
+ },
+ {
+  "agent": "SPARK AI Global Growth Navigator",
+  "offer": "Spark出海增长导航",
+  "mode": "task",
+  "units": "1",
+  "promo_listed": null,
+  "http": "200",
+  "resp": {
+   "paid": {
+    "reservedUnits": "0",
+    "availableUnits": "0"
+   },
+   "offerId": "6e187812-d1c9-597c-8192-d3d84a9816ee",
+   "quantity": 1,
+   "promotion": null,
+   "fundingSource": "insufficient",
+   "requiredUnits": "1",
+   "merchantSelfTest": false,
+   "serviceVersionId": "4c3f1384-b6eb-56cd-9e92-f7d08bfc4433"
+  }
+ },
+ {
+  "agent": "SuperClaw - AI Software Engineering Agent",
+  "offer": "标准异步任务",
+  "mode": "task",
+  "units": "10",
+  "promo_listed": null,
+  "http": "200",
+  "resp": {
+   "paid": {
+    "reservedUnits": "0",
+    "availableUnits": "0"
+   },
+   "offerId": "0b74cea5-16fb-5fd3-bc1f-1a0b93fdaca3",
+   "quantity": 1,
+   "promotion": null,
+   "fundingSource": "insufficient",
+   "requiredUnits": "10",
+   "merchantSelfTest": false,
+   "serviceVersionId": "6808d266-49a2-5eaf-bf6e-64e7f9ac99ff"
+  }
+ },
+ {
+  "agent": "SuperClaw - AI Software Engineering Agent",
+  "offer": "5-second video",
+  "mode": "generation",
+  "units": "8",
+  "promo_listed": null,
+  "http": "200",
+  "resp": {
+   "paid": {
+    "reservedUnits": "0",
+    "availableUnits": "0"
+   },
+   "offerId": "1cf22f74-a451-54f0-894a-baff6221693d",
+   "quantity": 1,
+   "promotion": null,
+   "fundingSource": "insufficient",
+   "requiredUnits": "8",
+   "merchantSelfTest": false,
+   "serviceVersionId": "6808d266-49a2-5eaf-bf6e-64e7f9ac99ff"
+  }
+ },
+ {
+  "agent": "SuperClaw - AI Software Engineering Agent",
+  "offer": "研究与交付任务（异步）",
+  "mode": "task",
+  "units": "5",
+  "promo_listed": null,
+  "http": "200",
+  "resp": {
+   "paid": {
+    "reservedUnits": "0",
+    "availableUnits": "0"
+   },
+   "offerId": "4db9ed69-5500-5750-8e42-1283488c8f6a",
+   "quantity": 1,
+   "promotion": null,
+   "fundingSource": "insufficient",
+   "requiredUnits": "5",
+   "merchantSelfTest": false,
+   "serviceVersionId": "6808d266-49a2-5eaf-bf6e-64e7f9ac99ff"
+  }
+ },
+ {
+  "agent": "SuperClaw - AI Software Engineering Agent",
+  "offer": "工程问答（单轮同步）",
+  "mode": "conversation_turn",
+  "units": "1",
+  "promo_listed": null,
+  "http": "200",
+  "resp": {
+   "paid": {
+    "reservedUnits": "0",
+    "availableUnits": "0"
+   },
+   "offerId": "b12b0173-cade-5e67-adad-db1a6873a914",
+   "quantity": 1,
+   "promotion": null,
+   "fundingSource": "insufficient",
+   "requiredUnits": "1",
+   "merchantSelfTest": false,
+   "serviceVersionId": "6808d266-49a2-5eaf-bf6e-64e7f9ac99ff"
+  }
+ },
+ {
+  "agent": "ChatProperty — Singapore Private Residential Analyst",
+  "offer": "ChatProperty Singapore Private Residential Analysis",
+  "mode": "task",
+  "units": "1",
+  "promo_listed": "10",
+  "http": "200",
+  "resp": {
+   "paid": {
+    "reservedUnits": "0",
+    "availableUnits": "0"
+   },
+   "offerId": "8997aaf3-5a73-4d75-9fdb-aefc51193983",
+   "quantity": 1,
+   "promotion": {
+    "expiresAt": "2026-10-28T09:28:42Z",
+    "dailyResetsAt": null,
+    "dailyRemaining": null,
+    "personalRemaining": "10",
+    "availableOperations": "10"
+   },
+   "fundingSource": "promotion",
+   "requiredUnits": "1",
+   "merchantSelfTest": false,
+   "serviceVersionId": "b3316156-4cab-47ba-8101-b07dc0266f14"
+  }
+ },
+ {
+  "agent": "Finance Data Agent - Powerdrill AI",
+  "offer": "标准异步任务",
+  "mode": "task",
+  "units": "1",
+  "promo_listed": null,
+  "http": "200",
+  "resp": {
+   "paid": {
+    "reservedUnits": "0",
+    "availableUnits": "0"
+   },
+   "offerId": "f994b52c-3a11-5110-9cfd-865e013eee70",
+   "quantity": 1,
+   "promotion": null,
+   "fundingSource": "insufficient",
+   "requiredUnits": "1",
+   "merchantSelfTest": false,
+   "serviceVersionId": "c2c55754-a942-508f-a362-d576724809f7"
+  }
+ },
+ {
+  "agent": "FlowCredit － Business Risk Intelligence",
+  "offer": "(direct contract)",
+  "mode": "direct",
+  "units": "1",
+  "promo_listed": "10",
+  "http": "200",
+  "resp": {
+   "paid": {
+    "reservedUnits": "0",
+    "availableUnits": "0"
+   },
+   "offerId": null,
+   "quantity": 1,
+   "promotion": {
+    "expiresAt": "2026-10-21T16:26:12Z",
+    "dailyResetsAt": null,
+    "dailyRemaining": null,
+    "personalRemaining": "10",
+    "availableOperations": "10"
+   },
+   "fundingSource": "promotion",
+   "requiredUnits": "1",
+   "merchantSelfTest": false,
+   "serviceVersionId": "e96e9a01-50aa-4686-bd0e-1aa9cdfcf967"
+  }
+ },
+ {
+  "agent": "LifeClaw - Phone Booking & Inquiries",
+  "offer": "电话预订与咨询",
+  "mode": "task",
+  "units": "1",
+  "promo_listed": "10",
+  "http": "200",
+  "resp": {
+   "paid": {
+    "reservedUnits": "0",
+    "availableUnits": "0"
+   },
+   "offerId": "553d84ae-a3ac-5200-81cf-cae0468aa61a",
+   "quantity": 1,
+   "promotion": {
+    "expiresAt": "2026-10-16T09:37:43Z",
+    "dailyResetsAt": null,
+    "dailyRemaining": null,
+    "personalRemaining": "10",
+    "availableOperations": "10"
+   },
+   "fundingSource": "promotion",
+   "requiredUnits": "1",
+   "merchantSelfTest": false,
+   "serviceVersionId": "e98cbf4b-fe2f-5fff-9236-d2bfcbad2eed"
+  }
+ },
+ {
+  "agent": "Maneki AI - Stock Analysis on Hyperliquid",
+  "offer": "Hyperliquid US-Stock Market Analyze",
+  "mode": "conversation_turn",
+  "units": "1",
+  "promo_listed": "10",
+  "http": "200",
+  "resp": {
+   "paid": {
+    "reservedUnits": "0",
+    "availableUnits": "0"
+   },
+   "offerId": "439465a2-85dc-42f3-95d0-100fc1d45a71",
+   "quantity": 1,
+   "promotion": {
+    "expiresAt": "2026-10-17T09:48:03Z",
+    "dailyResetsAt": null,
+    "dailyRemaining": null,
+    "personalRemaining": "10",
+    "availableOperations": "10"
+   },
+   "fundingSource": "promotion",
+   "requiredUnits": "1",
+   "merchantSelfTest": false,
+   "serviceVersionId": "eee98da7-f7b3-471b-b0e4-fdd2a617e436"
+  }
+ },
+ {
+  "agent": "Wheel-strategy Option Desk - Morgan Dashan",
+  "offer": "Short-dated option desk",
+  "mode": "task",
+  "units": "1",
+  "promo_listed": "10",
+  "http": "200",
+  "resp": {
+   "paid": {
+    "reservedUnits": "0",
+    "availableUnits": "0"
+   },
+   "offerId": "eb8365ca-5aba-4cbf-a9e5-7292fff41d6d",
+   "quantity": 1,
+   "promotion": {
+    "expiresAt": "2026-10-30T06:57:09Z",
+    "dailyResetsAt": null,
+    "dailyRemaining": null,
+    "personalRemaining": "10",
+    "availableOperations": "10"
+   },
+   "fundingSource": "promotion",
+   "requiredUnits": "1",
+   "merchantSelfTest": false,
+   "serviceVersionId": "f7c9c94a-961b-4159-a6ba-6b7852e84264"
+  }
+ },
+ {
+  "agent": "Science & Health Research Agent - Powerdrill AI",
+  "offer": "标准异步任务",
+  "mode": "task",
+  "units": "1",
+  "promo_listed": null,
+  "http": "200",
+  "resp": {
+   "paid": {
+    "reservedUnits": "0",
+    "availableUnits": "0"
+   },
+   "offerId": "7572ff95-7a65-5361-a785-7c061d654254",
+   "quantity": 1,
+   "promotion": null,
+   "fundingSource": "insufficient",
+   "requiredUnits": "1",
+   "merchantSelfTest": false,
+   "serviceVersionId": "f81bcd4b-87fc-5c74-9327-fe0d452caff8"
+  }
+ }
+]
