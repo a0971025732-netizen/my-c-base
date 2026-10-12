@@ -1,0 +1,1958 @@
+[
+ {
+  "versionId": "016ff796-247f-4e98-8f60-dcfb677fbc9e",
+  "name": "Baidu AI Cloud - General AI Agent",
+  "family": "agenton_v2",
+  "status": "online",
+  "accepting": true,
+  "unitPriceAtomic": "15000",
+  "promo": {
+   "grantOperations": "10",
+   "expiresAt": "2026-11-11T05:45:05.189Z"
+  },
+  "audit": "passed",
+  "directContract": false,
+  "offers": [
+   {
+    "offerId": "8fab6868-de23-4e4d-bd66-b15e928df555",
+    "name": "Qianfan DeepSeek V4 Flash",
+    "mode": "conversation_turn",
+    "units": "1",
+    "maxDur": 110,
+    "rounds": 0,
+    "rev": 4,
+    "inHash": "0xc1567e9fa3993eff3cfc3b2c11a0a5278fc9137f8c774b88b89b6462020c13f5",
+    "outHash": "0x86f79a92cb556ad9d3b3b3856830ba8bdd0d8883426cd607395e888decfc1ebf",
+    "addlProps": true,
+    "artifactMedia": [
+     "application/json"
+    ],
+    "inputSchema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "required": [
+      "content"
+     ],
+     "properties": {
+      "content": {
+       "type": "array",
+       "items": {
+        "oneOf": [
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "text"
+          ],
+          "properties": {
+           "text": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 1
+           },
+           "type": {
+            "const": "text"
+           }
+          },
+          "additionalProperties": false
+         }
+        ]
+       },
+       "maxItems": 100,
+       "minItems": 1
+      }
+     },
+     "additionalProperties": true
+    },
+    "outputSchema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "properties": {
+      "result": {},
+      "message": {
+       "type": "object",
+       "properties": {
+        "content": {
+         "type": "array",
+         "items": {
+          "type": "object"
+         }
+        }
+       },
+       "additionalProperties": true
+      },
+      "artifacts": {
+       "type": "array",
+       "items": {
+        "type": "object"
+       }
+      },
+      "modalities": {
+       "const": [
+        "text"
+       ]
+      }
+     },
+     "additionalProperties": true
+    },
+    "artifactContract": {
+     "count": {
+      "kind": "range",
+      "maxItems": 1,
+      "minItems": 0
+     },
+     "maxTotalBytes": "1048576",
+     "maxBytesPerItem": "1048576",
+     "allowedMediaTypes": [
+      "application/json"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "versionId": "16945007-bd26-5b62-ad5f-bbe72b288e9b",
+  "name": "LittlePinkPotato — AI Job Search & Resume Agent",
+  "family": "agenton_v2",
+  "status": "online",
+  "accepting": true,
+  "unitPriceAtomic": "50000",
+  "promo": null,
+  "audit": "passed",
+  "directContract": false,
+  "offers": [
+   {
+    "offerId": "5a06f44d-c241-51b5-9778-aec6bc73ebef",
+    "name": "AI 求职对话",
+    "mode": "conversation_turn",
+    "units": "5",
+    "maxDur": 90,
+    "rounds": 3,
+    "rev": 1,
+    "inHash": "0x7d009f2dcc43e7d2099a016a5676297c033ce64e82837172f0d2efc8583c14b7",
+    "outHash": "0x86f79a92cb556ad9d3b3b3856830ba8bdd0d8883426cd607395e888decfc1ebf",
+    "addlProps": true,
+    "artifactMedia": [
+     "application/octet-stream"
+    ],
+    "inputSchema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "required": [
+      "content"
+     ],
+     "properties": {
+      "content": {
+       "type": "array",
+       "items": {
+        "oneOf": [
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "text"
+          ],
+          "properties": {
+           "text": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 1
+           },
+           "type": {
+            "const": "text"
+           }
+          },
+          "additionalProperties": false
+         },
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "asset_id"
+          ],
+          "properties": {
+           "type": {
+            "const": "image"
+           },
+           "bytes": {
+            "type": "integer",
+            "minimum": 0
+           },
+           "asset_id": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1
+           },
+           "media_type": {
+            "type": "string"
+           },
+           "original_name": {
+            "type": "string"
+           }
+          },
+          "additionalProperties": true
+         },
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "asset_id"
+          ],
+          "properties": {
+           "type": {
+            "const": "video"
+           },
+           "bytes": {
+            "type": "integer",
+            "minimum": 0
+           },
+           "asset_id": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1
+           },
+           "media_type": {
+            "type": "string"
+           },
+           "original_name": {
+            "type": "string"
+           }
+          },
+          "additionalProperties": true
+         },
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "asset_id"
+          ],
+          "properties": {
+           "type": {
+            "const": "file"
+           },
+           "bytes": {
+            "type": "integer",
+            "minimum": 0
+           },
+           "asset_id": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1
+           },
+           "media_type": {
+            "type": "string"
+           },
+           "original_name": {
+            "type": "string"
+           }
+          },
+          "additionalProperties": true
+         }
+        ]
+       },
+       "maxItems": 100,
+       "minItems": 1
+      }
+     },
+     "additionalProperties": true,
+     "x-finch-input-artifacts": {
+      "maxAssets": 4,
+      "maxTotalBytes": 83886080,
+      "maxBytesPerAsset": 20971520
+     }
+    },
+    "outputSchema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "properties": {
+      "result": {},
+      "message": {
+       "type": "object",
+       "properties": {
+        "content": {
+         "type": "array",
+         "items": {
+          "type": "object"
+         }
+        }
+       },
+       "additionalProperties": true
+      },
+      "artifacts": {
+       "type": "array",
+       "items": {
+        "type": "object"
+       }
+      },
+      "modalities": {
+       "const": [
+        "text"
+       ]
+      }
+     },
+     "additionalProperties": true
+    },
+    "artifactContract": {
+     "count": {
+      "kind": "range",
+      "maxItems": 0,
+      "minItems": 0
+     },
+     "maxTotalBytes": "10485760",
+     "maxBytesPerItem": "10485760",
+     "allowedMediaTypes": [
+      "application/octet-stream"
+     ]
+    }
+   },
+   {
+    "offerId": "74a3503c-8313-51f8-b1fe-8a5c267d53d8",
+    "name": "职位匹配报告",
+    "mode": "task",
+    "units": "10",
+    "maxDur": 600,
+    "rounds": 3,
+    "rev": 1,
+    "inHash": "0x7d009f2dcc43e7d2099a016a5676297c033ce64e82837172f0d2efc8583c14b7",
+    "outHash": "0x86f79a92cb556ad9d3b3b3856830ba8bdd0d8883426cd607395e888decfc1ebf",
+    "addlProps": true,
+    "artifactMedia": [
+     "application/octet-stream"
+    ],
+    "inputSchema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "required": [
+      "content"
+     ],
+     "properties": {
+      "content": {
+       "type": "array",
+       "items": {
+        "oneOf": [
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "text"
+          ],
+          "properties": {
+           "text": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 1
+           },
+           "type": {
+            "const": "text"
+           }
+          },
+          "additionalProperties": false
+         },
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "asset_id"
+          ],
+          "properties": {
+           "type": {
+            "const": "image"
+           },
+           "bytes": {
+            "type": "integer",
+            "minimum": 0
+           },
+           "asset_id": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1
+           },
+           "media_type": {
+            "type": "string"
+           },
+           "original_name": {
+            "type": "string"
+           }
+          },
+          "additionalProperties": true
+         },
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "asset_id"
+          ],
+          "properties": {
+           "type": {
+            "const": "video"
+           },
+           "bytes": {
+            "type": "integer",
+            "minimum": 0
+           },
+           "asset_id": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1
+           },
+           "media_type": {
+            "type": "string"
+           },
+           "original_name": {
+            "type": "string"
+           }
+          },
+          "additionalProperties": true
+         },
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "asset_id"
+          ],
+          "properties": {
+           "type": {
+            "const": "file"
+           },
+           "bytes": {
+            "type": "integer",
+            "minimum": 0
+           },
+           "asset_id": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1
+           },
+           "media_type": {
+            "type": "string"
+           },
+           "original_name": {
+            "type": "string"
+           }
+          },
+          "additionalProperties": true
+         }
+        ]
+       },
+       "maxItems": 100,
+       "minItems": 1
+      }
+     },
+     "additionalProperties": true,
+     "x-finch-input-artifacts": {
+      "maxAssets": 4,
+      "maxTotalBytes": 83886080,
+      "maxBytesPerAsset": 20971520
+     }
+    },
+    "outputSchema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "properties": {
+      "result": {},
+      "message": {
+       "type": "object",
+       "properties": {
+        "content": {
+         "type": "array",
+         "items": {
+          "type": "object"
+         }
+        }
+       },
+       "additionalProperties": true
+      },
+      "artifacts": {
+       "type": "array",
+       "items": {
+        "type": "object"
+       }
+      },
+      "modalities": {
+       "const": [
+        "text"
+       ]
+      }
+     },
+     "additionalProperties": true
+    },
+    "artifactContract": {
+     "count": {
+      "kind": "range",
+      "maxItems": 0,
+      "minItems": 0
+     },
+     "maxTotalBytes": "10485760",
+     "maxBytesPerItem": "10485760",
+     "allowedMediaTypes": [
+      "application/octet-stream"
+     ]
+    }
+   },
+   {
+    "offerId": "edc356cc-69d6-52f2-a5d6-d8dd236067ee",
+    "name": "简历定制 + ATS 评分",
+    "mode": "task",
+    "units": "4",
+    "maxDur": 600,
+    "rounds": 3,
+    "rev": 1,
+    "inHash": "0x7d009f2dcc43e7d2099a016a5676297c033ce64e82837172f0d2efc8583c14b7",
+    "outHash": "0xe58eb3f6fb7298744986fe2fd419b55f0a235b74e990f86d66736bd339e91888",
+    "addlProps": true,
+    "artifactMedia": [
+     "application/json",
+     "application/pdf",
+     "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+     "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+     "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+     "application/zip",
+     "text/csv",
+     "text/markdown",
+     "text/plain"
+    ],
+    "inputSchema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "required": [
+      "content"
+     ],
+     "properties": {
+      "content": {
+       "type": "array",
+       "items": {
+        "oneOf": [
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "text"
+          ],
+          "properties": {
+           "text": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 1
+           },
+           "type": {
+            "const": "text"
+           }
+          },
+          "additionalProperties": false
+         },
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "asset_id"
+          ],
+          "properties": {
+           "type": {
+            "const": "image"
+           },
+           "bytes": {
+            "type": "integer",
+            "minimum": 0
+           },
+           "asset_id": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1
+           },
+           "media_type": {
+            "type": "string"
+           },
+           "original_name": {
+            "type": "string"
+           }
+          },
+          "additionalProperties": true
+         },
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "asset_id"
+          ],
+          "properties": {
+           "type": {
+            "const": "video"
+           },
+           "bytes": {
+            "type": "integer",
+            "minimum": 0
+           },
+           "asset_id": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1
+           },
+           "media_type": {
+            "type": "string"
+           },
+           "original_name": {
+            "type": "string"
+           }
+          },
+          "additionalProperties": true
+         },
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "asset_id"
+          ],
+          "properties": {
+           "type": {
+            "const": "file"
+           },
+           "bytes": {
+            "type": "integer",
+            "minimum": 0
+           },
+           "asset_id": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1
+           },
+           "media_type": {
+            "type": "string"
+           },
+           "original_name": {
+            "type": "string"
+           }
+          },
+          "additionalProperties": true
+         }
+        ]
+       },
+       "maxItems": 100,
+       "minItems": 1
+      }
+     },
+     "additionalProperties": true,
+     "x-finch-input-artifacts": {
+      "maxAssets": 4,
+      "maxTotalBytes": 83886080,
+      "maxBytesPerAsset": 20971520
+     }
+    },
+    "outputSchema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "properties": {
+      "result": {},
+      "message": {
+       "type": "object",
+       "properties": {
+        "content": {
+         "type": "array",
+         "items": {
+          "type": "object"
+         }
+        }
+       },
+       "additionalProperties": true
+      },
+      "artifacts": {
+       "type": "array",
+       "items": {
+        "type": "object"
+       }
+      },
+      "modalities": {
+       "const": [
+        "text",
+        "file"
+       ]
+      }
+     },
+     "additionalProperties": true
+    },
+    "artifactContract": {
+     "count": {
+      "kind": "range",
+      "maxItems": 4,
+      "minItems": 1
+     },
+     "maxTotalBytes": "83886080",
+     "maxBytesPerItem": "20971520",
+     "allowedMediaTypes": [
+      "application/json",
+      "application/pdf",
+      "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "application/zip",
+      "text/csv",
+      "text/markdown",
+      "text/plain"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "versionId": "3dcaa57f-b8b8-5c78-9300-c972e5a764bc",
+  "name": "MistTrack On-chain compliance investigator",
+  "family": "agenton_v2",
+  "status": "online",
+  "accepting": true,
+  "unitPriceAtomic": "500000",
+  "promo": null,
+  "audit": "passed",
+  "directContract": false,
+  "offers": [
+   {
+    "offerId": "00ed8fbf-3e36-5590-be69-bcaaeb93c119",
+    "name": "misttrack agent",
+    "mode": "conversation_turn",
+    "units": "1",
+    "maxDur": 120,
+    "rounds": 3,
+    "rev": 2,
+    "inHash": "0x9ce6a7cc12cf1695e1600070dc3875ecf8e0f3ac1c8e2d2a207d2e287f6af7d9",
+    "outHash": "0x86f79a92cb556ad9d3b3b3856830ba8bdd0d8883426cd607395e888decfc1ebf",
+    "addlProps": true,
+    "artifactMedia": [
+     "application/octet-stream"
+    ],
+    "inputSchema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "required": [
+      "content"
+     ],
+     "properties": {
+      "content": {
+       "type": "array",
+       "items": {
+        "oneOf": [
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "text"
+          ],
+          "properties": {
+           "text": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 1
+           },
+           "type": {
+            "const": "text"
+           }
+          },
+          "additionalProperties": false
+         }
+        ]
+       },
+       "maxItems": 100,
+       "minItems": 1
+      }
+     },
+     "additionalProperties": true,
+     "x-finch-input-artifacts": {
+      "maxAssets": 4,
+      "maxTotalBytes": 419430400,
+      "maxBytesPerAsset": 104857600
+     }
+    },
+    "outputSchema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "properties": {
+      "result": {},
+      "message": {
+       "type": "object",
+       "properties": {
+        "content": {
+         "type": "array",
+         "items": {
+          "type": "object"
+         }
+        }
+       },
+       "additionalProperties": true
+      },
+      "artifacts": {
+       "type": "array",
+       "items": {
+        "type": "object"
+       }
+      },
+      "modalities": {
+       "const": [
+        "text"
+       ]
+      }
+     },
+     "additionalProperties": true
+    },
+    "artifactContract": {
+     "count": {
+      "kind": "range",
+      "maxItems": 0,
+      "minItems": 0
+     },
+     "maxTotalBytes": "10485760",
+     "maxBytesPerItem": "10485760",
+     "allowedMediaTypes": [
+      "application/octet-stream"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "versionId": "4c3f1384-b6eb-56cd-9e92-f7d08bfc4433",
+  "name": "SPARK AI Global Growth Navigator",
+  "family": "agenton_v2",
+  "status": "online",
+  "accepting": true,
+  "unitPriceAtomic": "1000000",
+  "promo": null,
+  "audit": "passed",
+  "directContract": false,
+  "offers": []
+ },
+ {
+  "versionId": "6808d266-49a2-5eaf-bf6e-64e7f9ac99ff",
+  "name": "SuperClaw - AI Software Engineering Agent",
+  "family": "agenton_v2",
+  "status": "online",
+  "accepting": true,
+  "unitPriceAtomic": "1000000",
+  "promo": null,
+  "audit": "passed",
+  "directContract": false,
+  "offers": [
+   {
+    "offerId": "0b74cea5-16fb-5fd3-bc1f-1a0b93fdaca3",
+    "name": "标准异步任务",
+    "mode": "task",
+    "units": "10",
+    "maxDur": 600,
+    "rounds": 3,
+    "rev": 1,
+    "inHash": "0x9ce6a7cc12cf1695e1600070dc3875ecf8e0f3ac1c8e2d2a207d2e287f6af7d9",
+    "outHash": "0x86f79a92cb556ad9d3b3b3856830ba8bdd0d8883426cd607395e888decfc1ebf",
+    "addlProps": true,
+    "artifactMedia": [
+     "application/octet-stream"
+    ],
+    "inputSchema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "required": [
+      "content"
+     ],
+     "properties": {
+      "content": {
+       "type": "array",
+       "items": {
+        "oneOf": [
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "text"
+          ],
+          "properties": {
+           "text": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 1
+           },
+           "type": {
+            "const": "text"
+           }
+          },
+          "additionalProperties": false
+         }
+        ]
+       },
+       "maxItems": 100,
+       "minItems": 1
+      }
+     },
+     "additionalProperties": true,
+     "x-finch-input-artifacts": {
+      "maxAssets": 4,
+      "maxTotalBytes": 419430400,
+      "maxBytesPerAsset": 104857600
+     }
+    },
+    "outputSchema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "properties": {
+      "result": {},
+      "message": {
+       "type": "object",
+       "properties": {
+        "content": {
+         "type": "array",
+         "items": {
+          "type": "object"
+         }
+        }
+       },
+       "additionalProperties": true
+      },
+      "artifacts": {
+       "type": "array",
+       "items": {
+        "type": "object"
+       }
+      },
+      "modalities": {
+       "const": [
+        "text"
+       ]
+      }
+     },
+     "additionalProperties": true
+    },
+    "artifactContract": {
+     "count": {
+      "kind": "range",
+      "maxItems": 0,
+      "minItems": 0
+     },
+     "maxTotalBytes": "10485760",
+     "maxBytesPerItem": "10485760",
+     "allowedMediaTypes": [
+      "application/octet-stream"
+     ]
+    }
+   },
+   {
+    "offerId": "1cf22f74-a451-54f0-894a-baff6221693d",
+    "name": "5-second video",
+    "mode": "generation",
+    "units": "8",
+    "maxDur": 1800,
+    "rounds": 3,
+    "rev": 1,
+    "inHash": "0x66504005981543e30a03f6fba547cdb021dfa03f90899c167db5db5a492ffb8c",
+    "outHash": "0x5b2ee6843281816d069ed1fc3ec7065e01c8bab8fac0cf01dcf58174f063e12c",
+    "addlProps": true,
+    "artifactMedia": [
+     "video/*"
+    ],
+    "inputSchema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "required": [
+      "content"
+     ],
+     "properties": {
+      "content": {
+       "type": "array",
+       "items": {
+        "oneOf": [
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "text"
+          ],
+          "properties": {
+           "text": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 1
+           },
+           "type": {
+            "const": "text"
+           }
+          },
+          "additionalProperties": false
+         },
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "asset_id"
+          ],
+          "properties": {
+           "type": {
+            "const": "image"
+           },
+           "bytes": {
+            "type": "integer",
+            "minimum": 0
+           },
+           "asset_id": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1
+           },
+           "media_type": {
+            "type": "string"
+           },
+           "original_name": {
+            "type": "string"
+           }
+          },
+          "additionalProperties": true
+         },
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "asset_id"
+          ],
+          "properties": {
+           "type": {
+            "const": "video"
+           },
+           "bytes": {
+            "type": "integer",
+            "minimum": 0
+           },
+           "asset_id": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1
+           },
+           "media_type": {
+            "type": "string"
+           },
+           "original_name": {
+            "type": "string"
+           }
+          },
+          "additionalProperties": true
+         },
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "asset_id"
+          ],
+          "properties": {
+           "type": {
+            "const": "file"
+           },
+           "bytes": {
+            "type": "integer",
+            "minimum": 0
+           },
+           "asset_id": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1
+           },
+           "media_type": {
+            "type": "string"
+           },
+           "original_name": {
+            "type": "string"
+           }
+          },
+          "additionalProperties": true
+         }
+        ]
+       },
+       "maxItems": 100,
+       "minItems": 1
+      }
+     },
+     "additionalProperties": true,
+     "x-finch-input-artifacts": {
+      "maxAssets": 2,
+      "maxTotalBytes": 209715200,
+      "maxBytesPerAsset": 104857600
+     }
+    },
+    "outputSchema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "properties": {
+      "result": {},
+      "message": {
+       "type": "object",
+       "properties": {
+        "content": {
+         "type": "array",
+         "items": {
+          "type": "object"
+         }
+        }
+       },
+       "additionalProperties": true
+      },
+      "artifacts": {
+       "type": "array",
+       "items": {
+        "type": "object"
+       }
+      },
+      "modalities": {
+       "const": [
+        "video"
+       ]
+      }
+     },
+     "additionalProperties": true
+    },
+    "artifactContract": {
+     "count": {
+      "kind": "range",
+      "maxItems": 1,
+      "minItems": 0
+     },
+     "maxTotalBytes": "10485760",
+     "maxBytesPerItem": "10485760",
+     "allowedMediaTypes": [
+      "video/*"
+     ]
+    }
+   },
+   {
+    "offerId": "4db9ed69-5500-5750-8e42-1283488c8f6a",
+    "name": "研究与交付任务（异步）",
+    "mode": "task",
+    "units": "5",
+    "maxDur": 600,
+    "rounds": 3,
+    "rev": 1,
+    "inHash": "0x9ce6a7cc12cf1695e1600070dc3875ecf8e0f3ac1c8e2d2a207d2e287f6af7d9",
+    "outHash": "0x86f79a92cb556ad9d3b3b3856830ba8bdd0d8883426cd607395e888decfc1ebf",
+    "addlProps": true,
+    "artifactMedia": [
+     "application/octet-stream"
+    ],
+    "inputSchema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "required": [
+      "content"
+     ],
+     "properties": {
+      "content": {
+       "type": "array",
+       "items": {
+        "oneOf": [
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "text"
+          ],
+          "properties": {
+           "text": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 1
+           },
+           "type": {
+            "const": "text"
+           }
+          },
+          "additionalProperties": false
+         }
+        ]
+       },
+       "maxItems": 100,
+       "minItems": 1
+      }
+     },
+     "additionalProperties": true,
+     "x-finch-input-artifacts": {
+      "maxAssets": 4,
+      "maxTotalBytes": 419430400,
+      "maxBytesPerAsset": 104857600
+     }
+    },
+    "outputSchema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "properties": {
+      "result": {},
+      "message": {
+       "type": "object",
+       "properties": {
+        "content": {
+         "type": "array",
+         "items": {
+          "type": "object"
+         }
+        }
+       },
+       "additionalProperties": true
+      },
+      "artifacts": {
+       "type": "array",
+       "items": {
+        "type": "object"
+       }
+      },
+      "modalities": {
+       "const": [
+        "text"
+       ]
+      }
+     },
+     "additionalProperties": true
+    },
+    "artifactContract": {
+     "count": {
+      "kind": "range",
+      "maxItems": 0,
+      "minItems": 0
+     },
+     "maxTotalBytes": "10485760",
+     "maxBytesPerItem": "10485760",
+     "allowedMediaTypes": [
+      "application/octet-stream"
+     ]
+    }
+   },
+   {
+    "offerId": "b12b0173-cade-5e67-adad-db1a6873a914",
+    "name": "工程问答（单轮同步）",
+    "mode": "conversation_turn",
+    "units": "1",
+    "maxDur": 90,
+    "rounds": 3,
+    "rev": 1,
+    "inHash": "0x9ce6a7cc12cf1695e1600070dc3875ecf8e0f3ac1c8e2d2a207d2e287f6af7d9",
+    "outHash": "0x86f79a92cb556ad9d3b3b3856830ba8bdd0d8883426cd607395e888decfc1ebf",
+    "addlProps": true,
+    "artifactMedia": [
+     "application/octet-stream"
+    ],
+    "inputSchema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "required": [
+      "content"
+     ],
+     "properties": {
+      "content": {
+       "type": "array",
+       "items": {
+        "oneOf": [
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "text"
+          ],
+          "properties": {
+           "text": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 1
+           },
+           "type": {
+            "const": "text"
+           }
+          },
+          "additionalProperties": false
+         }
+        ]
+       },
+       "maxItems": 100,
+       "minItems": 1
+      }
+     },
+     "additionalProperties": true,
+     "x-finch-input-artifacts": {
+      "maxAssets": 4,
+      "maxTotalBytes": 419430400,
+      "maxBytesPerAsset": 104857600
+     }
+    },
+    "outputSchema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "properties": {
+      "result": {},
+      "message": {
+       "type": "object",
+       "properties": {
+        "content": {
+         "type": "array",
+         "items": {
+          "type": "object"
+         }
+        }
+       },
+       "additionalProperties": true
+      },
+      "artifacts": {
+       "type": "array",
+       "items": {
+        "type": "object"
+       }
+      },
+      "modalities": {
+       "const": [
+        "text"
+       ]
+      }
+     },
+     "additionalProperties": true
+    },
+    "artifactContract": {
+     "count": {
+      "kind": "range",
+      "maxItems": 0,
+      "minItems": 0
+     },
+     "maxTotalBytes": "10485760",
+     "maxBytesPerItem": "10485760",
+     "allowedMediaTypes": [
+      "application/octet-stream"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "versionId": "b3316156-4cab-47ba-8101-b07dc0266f14",
+  "name": "ChatProperty — Singapore Private Residential Analyst",
+  "family": "agenton_v2",
+  "status": "online",
+  "accepting": true,
+  "unitPriceAtomic": "500000",
+  "promo": {
+   "grantOperations": "10",
+   "expiresAt": "2026-10-28T09:28:42.322Z"
+  },
+  "audit": "passed",
+  "directContract": false,
+  "offers": [
+   {
+    "offerId": "8997aaf3-5a73-4d75-9fdb-aefc51193983",
+    "name": "ChatProperty Singapore Private Residential Analysis",
+    "mode": "task",
+    "units": "1",
+    "maxDur": 1500,
+    "rounds": 5,
+    "rev": 8,
+    "inHash": "0x0274cb56388d79df84da7e3d5ab3f64a184aecea90ca9a321b421cb07cffec54",
+    "outHash": "0x54e5431ce455b8c4ec940d12700ed1be5be44d3cdd576f093f0ba301d5dbf423",
+    "addlProps": null,
+    "artifactMedia": [
+     "image/png",
+     "image/jpeg",
+     "image/webp"
+    ],
+    "inputSchema": {
+     "oneOf": [
+      {
+       "type": "string",
+       "maxLength": 10000,
+       "minLength": 1
+      },
+      {
+       "type": "object",
+       "required": [
+        "content"
+       ],
+       "properties": {
+        "content": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "required": [
+           "type",
+           "text"
+          ],
+          "properties": {
+           "text": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 1
+           },
+           "type": {
+            "const": "text"
+           }
+          },
+          "additionalProperties": false
+         },
+         "maxItems": 100,
+         "minItems": 1
+        }
+       },
+       "additionalProperties": true
+      }
+     ],
+     "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "outputSchema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "additionalProperties": true
+    },
+    "artifactContract": {
+     "count": {
+      "kind": "range",
+      "maxItems": 4,
+      "minItems": 0
+     },
+     "maxTotalBytes": "20971520",
+     "maxBytesPerItem": "5242880",
+     "allowedMediaTypes": [
+      "image/png",
+      "image/jpeg",
+      "image/webp"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "versionId": "c2c55754-a942-508f-a362-d576724809f7",
+  "name": "Finance Data Agent - Powerdrill AI",
+  "family": "agenton_v2",
+  "status": "online",
+  "accepting": true,
+  "unitPriceAtomic": "1500000",
+  "promo": null,
+  "audit": "passed",
+  "directContract": false,
+  "offers": [
+   {
+    "offerId": "f994b52c-3a11-5110-9cfd-865e013eee70",
+    "name": "标准异步任务",
+    "mode": "task",
+    "units": "1",
+    "maxDur": 1800,
+    "rounds": 3,
+    "rev": 1,
+    "inHash": "0x9ce6a7cc12cf1695e1600070dc3875ecf8e0f3ac1c8e2d2a207d2e287f6af7d9",
+    "outHash": "0xe58eb3f6fb7298744986fe2fd419b55f0a235b74e990f86d66736bd339e91888",
+    "addlProps": true,
+    "artifactMedia": [
+     "application/json",
+     "application/pdf",
+     "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+     "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+     "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+     "application/zip",
+     "text/csv",
+     "text/markdown",
+     "text/plain"
+    ],
+    "inputSchema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "required": [
+      "content"
+     ],
+     "properties": {
+      "content": {
+       "type": "array",
+       "items": {
+        "oneOf": [
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "text"
+          ],
+          "properties": {
+           "text": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 1
+           },
+           "type": {
+            "const": "text"
+           }
+          },
+          "additionalProperties": false
+         }
+        ]
+       },
+       "maxItems": 100,
+       "minItems": 1
+      }
+     },
+     "additionalProperties": true,
+     "x-finch-input-artifacts": {
+      "maxAssets": 4,
+      "maxTotalBytes": 419430400,
+      "maxBytesPerAsset": 104857600
+     }
+    },
+    "outputSchema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "properties": {
+      "result": {},
+      "message": {
+       "type": "object",
+       "properties": {
+        "content": {
+         "type": "array",
+         "items": {
+          "type": "object"
+         }
+        }
+       },
+       "additionalProperties": true
+      },
+      "artifacts": {
+       "type": "array",
+       "items": {
+        "type": "object"
+       }
+      },
+      "modalities": {
+       "const": [
+        "text",
+        "file"
+       ]
+      }
+     },
+     "additionalProperties": true
+    },
+    "artifactContract": {
+     "count": {
+      "kind": "range",
+      "maxItems": 4,
+      "minItems": 1
+     },
+     "maxTotalBytes": "83886080",
+     "maxBytesPerItem": "20971520",
+     "allowedMediaTypes": [
+      "application/json",
+      "application/pdf",
+      "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "application/zip",
+      "text/csv",
+      "text/markdown",
+      "text/plain"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "versionId": "e96e9a01-50aa-4686-bd0e-1aa9cdfcf967",
+  "name": "FlowCredit － Business Risk Intelligence",
+  "family": "direct_api_v1",
+  "status": "online",
+  "accepting": true,
+  "unitPriceAtomic": "9900000",
+  "promo": {
+   "grantOperations": "10",
+   "expiresAt": "2026-10-21T16:26:12.051Z"
+  },
+  "audit": "passed",
+  "directContract": false,
+  "offers": []
+ },
+ {
+  "versionId": "e98cbf4b-fe2f-5fff-9236-d2bfcbad2eed",
+  "name": "LifeClaw - Phone Booking & Inquiries",
+  "family": "agenton_v2",
+  "status": "online",
+  "accepting": true,
+  "unitPriceAtomic": "500000",
+  "promo": {
+   "grantOperations": "10",
+   "expiresAt": "2026-10-16T09:37:43.202Z"
+  },
+  "audit": "passed",
+  "directContract": false,
+  "offers": [
+   {
+    "offerId": "553d84ae-a3ac-5200-81cf-cae0468aa61a",
+    "name": "电话预订与咨询",
+    "mode": "task",
+    "units": "1",
+    "maxDur": 600,
+    "rounds": 10,
+    "rev": 1,
+    "inHash": "0x9ce6a7cc12cf1695e1600070dc3875ecf8e0f3ac1c8e2d2a207d2e287f6af7d9",
+    "outHash": "0x86f79a92cb556ad9d3b3b3856830ba8bdd0d8883426cd607395e888decfc1ebf",
+    "addlProps": true,
+    "artifactMedia": [
+     "application/octet-stream"
+    ],
+    "inputSchema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "required": [
+      "content"
+     ],
+     "properties": {
+      "content": {
+       "type": "array",
+       "items": {
+        "oneOf": [
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "text"
+          ],
+          "properties": {
+           "text": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 1
+           },
+           "type": {
+            "const": "text"
+           }
+          },
+          "additionalProperties": false
+         }
+        ]
+       },
+       "maxItems": 100,
+       "minItems": 1
+      }
+     },
+     "additionalProperties": true,
+     "x-finch-input-artifacts": {
+      "maxAssets": 4,
+      "maxTotalBytes": 419430400,
+      "maxBytesPerAsset": 104857600
+     }
+    },
+    "outputSchema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "properties": {
+      "result": {},
+      "message": {
+       "type": "object",
+       "properties": {
+        "content": {
+         "type": "array",
+         "items": {
+          "type": "object"
+         }
+        }
+       },
+       "additionalProperties": true
+      },
+      "artifacts": {
+       "type": "array",
+       "items": {
+        "type": "object"
+       }
+      },
+      "modalities": {
+       "const": [
+        "text"
+       ]
+      }
+     },
+     "additionalProperties": true
+    },
+    "artifactContract": {
+     "count": {
+      "kind": "range",
+      "maxItems": 0,
+      "minItems": 0
+     },
+     "maxTotalBytes": "10485760",
+     "maxBytesPerItem": "10485760",
+     "allowedMediaTypes": [
+      "application/octet-stream"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "versionId": "eee98da7-f7b3-471b-b0e4-fdd2a617e436",
+  "name": "Maneki AI - Stock Analysis on Hyperliquid",
+  "family": "agenton_v2",
+  "status": "online",
+  "accepting": true,
+  "unitPriceAtomic": "10000",
+  "promo": {
+   "grantOperations": "10",
+   "expiresAt": "2026-10-17T09:48:03.310Z"
+  },
+  "audit": "passed",
+  "directContract": false,
+  "offers": [
+   {
+    "offerId": "439465a2-85dc-42f3-95d0-100fc1d45a71",
+    "name": "Hyperliquid US-Stock Market Analyze",
+    "mode": "conversation_turn",
+    "units": "1",
+    "maxDur": 120,
+    "rounds": 2,
+    "rev": 3,
+    "inHash": "0x44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "outHash": "0x44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "addlProps": null,
+    "artifactMedia": [
+     "application/json"
+    ],
+    "inputSchema": {},
+    "outputSchema": {},
+    "artifactContract": {
+     "count": {
+      "kind": "range",
+      "maxItems": 1,
+      "minItems": 0
+     },
+     "maxTotalBytes": "1048576",
+     "maxBytesPerItem": "1048576",
+     "allowedMediaTypes": [
+      "application/json"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "versionId": "f7c9c94a-961b-4159-a6ba-6b7852e84264",
+  "name": "Wheel-strategy Option Desk - Morgan Dashan",
+  "family": "agenton_v2",
+  "status": "online",
+  "accepting": true,
+  "unitPriceAtomic": "10000",
+  "promo": {
+   "grantOperations": "10",
+   "expiresAt": "2026-10-30T06:57:09.832Z"
+  },
+  "audit": "passed",
+  "directContract": false,
+  "offers": [
+   {
+    "offerId": "eb8365ca-5aba-4cbf-a9e5-7292fff41d6d",
+    "name": "Short-dated option desk",
+    "mode": "task",
+    "units": "1",
+    "maxDur": 600,
+    "rounds": 2,
+    "rev": 1,
+    "inHash": "0xc1567e9fa3993eff3cfc3b2c11a0a5278fc9137f8c774b88b89b6462020c13f5",
+    "outHash": "0x86f79a92cb556ad9d3b3b3856830ba8bdd0d8883426cd607395e888decfc1ebf",
+    "addlProps": true,
+    "artifactMedia": [
+     "application/json"
+    ],
+    "inputSchema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "required": [
+      "content"
+     ],
+     "properties": {
+      "content": {
+       "type": "array",
+       "items": {
+        "oneOf": [
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "text"
+          ],
+          "properties": {
+           "text": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 1
+           },
+           "type": {
+            "const": "text"
+           }
+          },
+          "additionalProperties": false
+         }
+        ]
+       },
+       "maxItems": 100,
+       "minItems": 1
+      }
+     },
+     "additionalProperties": true
+    },
+    "outputSchema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "properties": {
+      "result": {},
+      "message": {
+       "type": "object",
+       "properties": {
+        "content": {
+         "type": "array",
+         "items": {
+          "type": "object"
+         }
+        }
+       },
+       "additionalProperties": true
+      },
+      "artifacts": {
+       "type": "array",
+       "items": {
+        "type": "object"
+       }
+      },
+      "modalities": {
+       "const": [
+        "text"
+       ]
+      }
+     },
+     "additionalProperties": true
+    },
+    "artifactContract": {
+     "count": {
+      "kind": "range",
+      "maxItems": 1,
+      "minItems": 0
+     },
+     "maxTotalBytes": "1048576",
+     "maxBytesPerItem": "1048576",
+     "allowedMediaTypes": [
+      "application/json"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "versionId": "f81bcd4b-87fc-5c74-9327-fe0d452caff8",
+  "name": "Science & Health Research Agent - Powerdrill AI",
+  "family": "agenton_v2",
+  "status": "online",
+  "accepting": true,
+  "unitPriceAtomic": "1500000",
+  "promo": null,
+  "audit": "passed",
+  "directContract": false,
+  "offers": [
+   {
+    "offerId": "7572ff95-7a65-5361-a785-7c061d654254",
+    "name": "标准异步任务",
+    "mode": "task",
+    "units": "1",
+    "maxDur": 1800,
+    "rounds": 3,
+    "rev": 1,
+    "inHash": "0x9ce6a7cc12cf1695e1600070dc3875ecf8e0f3ac1c8e2d2a207d2e287f6af7d9",
+    "outHash": "0xe58eb3f6fb7298744986fe2fd419b55f0a235b74e990f86d66736bd339e91888",
+    "addlProps": true,
+    "artifactMedia": [
+     "application/json",
+     "application/pdf",
+     "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+     "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+     "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+     "application/zip",
+     "text/csv",
+     "text/markdown",
+     "text/plain"
+    ],
+    "inputSchema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "required": [
+      "content"
+     ],
+     "properties": {
+      "content": {
+       "type": "array",
+       "items": {
+        "oneOf": [
+         {
+          "type": "object",
+          "required": [
+           "type",
+           "text"
+          ],
+          "properties": {
+           "text": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 1
+           },
+           "type": {
+            "const": "text"
+           }
+          },
+          "additionalProperties": false
+         }
+        ]
+       },
+       "maxItems": 100,
+       "minItems": 1
+      }
+     },
+     "additionalProperties": true,
+     "x-finch-input-artifacts": {
+      "maxAssets": 4,
+      "maxTotalBytes": 419430400,
+      "maxBytesPerAsset": 104857600
+     }
+    },
+    "outputSchema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "properties": {
+      "result": {},
+      "message": {
+       "type": "object",
+       "properties": {
+        "content": {
+         "type": "array",
+         "items": {
+          "type": "object"
+         }
+        }
+       },
+       "additionalProperties": true
+      },
+      "artifacts": {
+       "type": "array",
+       "items": {
+        "type": "object"
+       }
+      },
+      "modalities": {
+       "const": [
+        "text",
+        "file"
+       ]
+      }
+     },
+     "additionalProperties": true
+    },
+    "artifactContract": {
+     "count": {
+      "kind": "range",
+      "maxItems": 4,
+      "minItems": 1
+     },
+     "maxTotalBytes": "83886080",
+     "maxBytesPerItem": "20971520",
+     "allowedMediaTypes": [
+      "application/json",
+      "application/pdf",
+      "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "application/zip",
+      "text/csv",
+      "text/markdown",
+      "text/plain"
+     ]
+    }
+   }
+  ]
+ }
+]
