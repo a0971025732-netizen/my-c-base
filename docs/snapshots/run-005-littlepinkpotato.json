@@ -1,0 +1,53 @@
+[
+ {
+  "offer": "AI 求职对话",
+  "account": "acct-003",
+  "units": "5",
+  "prompt": "想找数据分析的活 新加坡 三年经验 有合适的不",
+  "funding": "promotion",
+  "remaining_before": "10",
+  "dailyRemaining": "99",
+  "http": "202",
+  "outcome": "COMPLETED",
+  "latency_s": 33.3,
+  "polls": 1,
+  "remaining_after": "9",
+  "charged": 1,
+  "text": "有的，新加坡数据分析师市场需求挺旺盛。三年经验的话，你可以瞄准 Data Analyst 或 Senior Data Analyst 这两个职级，月薪大概在 SGD 5,000 到 7,000 之间，具体看公司规模和行业。科技公司、金融机构和电商平台需求最大，像字节跳动新加坡这种大厂，数据分析师年薪能到 SGD 80K 到 110K。\n\n技能方面，SQL、Python、Tableau 或 Power BI 是标配，如果会 R 或有机器学习基础会加分。金融科技和电商领域特别看重业务理解能力，不只是跑数据，还得能提出洞察推动决策。\n\n建议多关注本地招聘平台比如 LinkedIn、JobStreet 和 MyCareersFuture，后者是新加坡政府的职位门户，很多公司会优先在那里发布。三年经验刚好卡在中级位置，如果之前做过跨职能项目或者有行业领域专长（比如零售、物流、fintech），会更有竞争力。\n\n现在市场还算活跃，不过拿 EP（Employment Pass）的门槛提高了，确保你的资历和薪资水平符合要求，一般三年经验申请 EP 问题不大。",
+  "text_len": 478
+ },
+ {
+  "offer": "简历定制 + ATS 评分",
+  "account": "acct-003",
+  "units": "4",
+  "prompt": "简历想改下 我产品经理 三年 做过电商 想投字节那种 大厂产品岗 帮我弄下",
+  "funding": "promotion",
+  "remaining_before": "9",
+  "dailyRemaining": "98",
+  "http": "202",
+  "outcome": "INPUT_REQUIRED",
+  "latency_s": 13.2,
+  "polls": 1,
+  "remaining_after": "9",
+  "charged": 0,
+  "text": "{\"questions\": [{\"id\": \"resume\", \"type\": \"text\", \"label\": \"请把你的简历内容贴过来（工作经历、技能、学历都可以简单写），我才能帮你匹配职位。\\nPlease paste your résumé (roles, skills, education) so I can match you to jobs.\", \"prompt\": \"\", \"options\": [], \"question\": \"请把你的简历内容贴过来（工作经历、技能、学历都可以简单写），我才能帮你匹配职位。\\nPlease paste your résumé (roles, skills, education) so I can match you to jobs.\", \"required\": true}, {\"id\": \"job_description\", \"type\": \"text\", \"label\": \"请贴上目标职位的职位描述（JD）。\\nPlease paste the target job description.\", \"prompt\": \"\", \"options\": [], \"question\": \"请贴上目标职位的职位描述（JD）。\\nPlease paste the target job description.\", \"required\": true}]}",
+  "text_len": 604
+ },
+ {
+  "offer": "职位匹配报告",
+  "account": "acct-002",
+  "units": "10",
+  "prompt": "后端 五年 python go 都会 想去新加坡 香港也行 远程最好 看看有啥岗",
+  "funding": "promotion",
+  "remaining_before": "10",
+  "dailyRemaining": "96",
+  "http": "202",
+  "outcome": "INPUT_REQUIRED",
+  "latency_s": 11.7,
+  "polls": 1,
+  "remaining_after": "10",
+  "charged": 0,
+  "text": "{\"questions\": [{\"id\": \"resume\", \"type\": \"text\", \"label\": \"请把你的简历内容贴过来（工作经历、技能、学历都可以简单写），我才能帮你匹配职位。\\nPlease paste your résumé (roles, skills, education) so I can match you to jobs.\", \"prompt\": \"\", \"options\": [], \"question\": \"请把你的简历内容贴过来（工作经历、技能、学历都可以简单写），我才能帮你匹配职位。\\nPlease paste your résumé (roles, skills, education) so I can match you to jobs.\", \"required\": true}]}",
+  "text_len": 367
+ }
+]
