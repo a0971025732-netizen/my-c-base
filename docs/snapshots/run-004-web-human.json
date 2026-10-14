@@ -1,0 +1,86 @@
+{
+ "address": "0x02B55fa89D0C54Da3D6987e18039900b23A4d341",
+ "signed": [
+  {
+   "method": "personal_sign",
+   "message": "finch-wallet-auth-v1\nRequest ID: 74f60cda-cb81-451c-9452-c86157277cfa\nOrigin: https://www.finchtech.ai\nWallet: 0x02b55fa89d0c54da3d6987e18039900b23a4d341\nChain ID: 8453\nNonce: iiJppAQ-fcYAydwaQt7_uw\nIssued At: 2026-10-14T03:34:14.577Z\nExpiration Time: 2026-10-14T03:39:14.577Z"
+  }
+ ],
+ "net": [
+  "401 POST /api/usage",
+  "206 GET /api/content/avatar?uri=ipfs%3A%2F%2Fbafkreihbjsdtxba4ei6qkpakuzjfltnmit4ijrozyrhnnp5rthwtkh6viu",
+  "401 GET /api/me",
+  "200 GET /api/auth/social/providers",
+  "200 GET /api/content/avatar?uri=ipfs%3A%2F%2Fbafkreihbjsdtxba4ei6qkpakuzjfltnmit4ijrozyrhnnp5rthwtkh6viu",
+  "200 GET /api/agents/reviews?serviceVersionId=016ff796-247f-4e98-8f60-dcfb677fbc9e&page=1&perPage=10",
+  "200 GET /api/agent-market/example-prompts?versionId=016ff796-247f-4e98-8f60-dcfb677fbc9e&versionRevision=1&t",
+  "401 POST /api/usage",
+  "201 POST /api/auth/wallet/challenge",
+  "200 POST /api/auth/wallet/verify",
+  "200 GET /api/auth/social/bindings",
+  "200 GET /api/agents/reviews?serviceVersionId=016ff796-247f-4e98-8f60-dcfb677fbc9e&page=1&perPage=10",
+  "200 GET /api/v1/agent-market/buyer/call-eligibility?offerId=8fab6868-de23-4e4d-bd66-b15e928df555&quantity=1",
+  "200 GET /api/me",
+  "200 POST /api/agent-market/conversations/671b85d8-d3fc-401a-8161-4aacfadebb6f",
+  "200 GET /api/agents/reviews?serviceVersionId=016ff796-247f-4e98-8f60-dcfb677fbc9e&page=1&perPage=10",
+  "200 GET /api/v1/agent-market/buyer/call-eligibility?offerId=8fab6868-de23-4e4d-bd66-b15e928df555&quantity=1"
+ ],
+ "steps": [
+  {
+   "tag": "01-anon",
+   "credits": [
+    "By 0xe4be…2b34",
+    "Log in to claim your free credits.",
+    "Available credits:",
+    "Send message (use 1 free credit)",
+    "Log in to send a message and claim your free credits."
+   ]
+  },
+  {
+   "tag": "02-rainbowkit",
+   "credits": [
+    "By 0xe4be…2b34",
+    "Log in to claim your free credits.",
+    "Available credits:",
+    "Send message (use 1 free credit)",
+    "Log in to send a message and claim your free credits."
+   ]
+  },
+  {
+   "tag": "03-after-wallet-click",
+   "credits": [
+    "By 0xe4be…2b34",
+    "Log in to claim your free credits.",
+    "Available credits:",
+    "Send message (use 1 free credit)",
+    "Log in to send a message and claim your free credits."
+   ]
+  },
+  {
+   "tag": "04-after-sign",
+   "credits": [
+    "0x02b5…d341",
+    "By 0xe4be…2b34",
+    "Available credits:",
+    "Free credit × 10",
+    "This request uses 1 free credit"
+   ]
+  },
+  {
+   "tag": "05-after-send",
+   "credits": [
+    "0x02b5…d341",
+    "By 0xe4be…2b34",
+    "Available credits:",
+    "Free credit × 9",
+    "This request uses 1 free credit"
+   ]
+  }
+ ],
+ "me": {
+  "status": 200,
+  "body": "{\"accountId\":\"3c2903ed-7c3f-43d2-ac7d-7d4d161ede9b\",\"username\":null,\"accountOrigin\":\"finch\",\"authMethod\":\"wallet\",\"walletBinding\":{\"walletAddress\":\"0x02b55fa89d0c54da3d6987e18039900b23a4d341\",\"signatureKind\":\"eoa\",\"verifiedChainId\":null},\"marketActionState\":\"ready\",\"clientKind\":\"H\",\"sessionExpiresAt\":\"2026-10-21T03:34:15.586Z\"}"
+ },
+ "sendButton": "Send message (use 1 free credit)",
+ "replyFound": true
+}
