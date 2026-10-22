@@ -1,0 +1,158 @@
+[
+ {
+  "id": "A",
+  "kind": "new",
+  "lang": "en",
+  "agents": [
+   "Science & Health",
+   "LittlePinkPotato"
+  ],
+  "calls": [
+   {
+    "n": 1,
+    "agent": "scihealth",
+    "prompt": "should i take vitamin d or not",
+    "outcome": "CHARGED",
+    "credBefore": 10,
+    "credAfter": 9,
+    "latency_s": 125,
+    "reply": "AGENT - POWERDRILL AI I'll search the scientific literature on vitamin D supplementation evidence, then produce a research report. Note: I cannot advise whether you specifically should take it — that requires a healthcare provider — but I can give you the full evidence picture. Good evidence gathered. Now I'll write the report. Both files confirmed. Here is the closing summary: --- Should you take vitamin D? Here's what 17 peer-reviewed sources say: Deficiency is widespread — over 50% of US middle-aged and older adults are deficient or insufficient, and up to 13% of Europeans are severely defi"
+   },
+   {
+    "n": 2,
+    "agent": "scihealth",
+    "prompt": "whats the cardio evidence for glp-1 drugs",
+    "outcome": "CHARGED",
+    "credBefore": 9,
+    "credAfter": 8,
+    "latency_s": 115,
+    "reply": "AGENT - POWERDRILL AI Now I have enough evidence. Let me write the report. Both files confirmed. Here's the summary: --- GLP-1 Drugs and Cardiovascular Evidence — Key Conclusions The cardiovascular evidence for GLP-1 receptor agonists is now among the most robust in cardiometabolic medicine. Eight large, randomized CVOTs have tested these drugs against 3-point MACE (CV death, non-fatal MI, non-fatal stroke): five showed significant superiority (liraglutide −13%, semaglutide SC −26%, dulaglutide −12%, albiglutide −22%, efpeglenatide −27%) and three were non-inferior but neutral (lixisenatide, e"
+   },
+   {
+    "n": 3,
+    "agent": "lpp",
+    "prompt": "wanna fix my resume im a pm 3 yrs ecommerce",
+    "outcome": "TIMEOUT",
+    "credBefore": 10,
+    "credAfter": 10,
+    "latency_s": 300,
+    "reply": ""
+   },
+   {
+    "n": 4,
+    "agent": "scihealth",
+    "prompt": "check research on caffeine and sleep",
+    "outcome": "ERROR",
+    "error": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator"
+   }
+  ],
+  "address": "0x2A501Ce6505a0451BFd649C1fb6ea9F828dC8078",
+  "accountId": "3c95e0f0-8cff-4402-8f1c-2614330bff4a",
+  "clientKind": "H"
+ },
+ {
+  "id": "B",
+  "kind": "new",
+  "lang": "zh-CN",
+  "agents": [
+   "Science & Health",
+   "Maneki Hyperliquid",
+   "Wheel Option Desk"
+  ],
+  "calls": [
+   {
+    "n": 1,
+    "agent": "wheel",
+    "prompt": "ko 这支稳不 一万五",
+    "outcome": "TIMEOUT",
+    "credBefore": 10,
+    "credAfter": 10,
+    "latency_s": 300,
+    "reply": ""
+   },
+   {
+    "n": 2,
+    "agent": "maneki",
+    "prompt": "tsla 最近咋样 大概说下",
+    "outcome": "TIMEOUT",
+    "credBefore": 10,
+    "credAfter": 10,
+    "latency_s": 300,
+    "reply": ""
+   },
+   {
+    "n": 3,
+    "agent": "scihealth",
+    "prompt": "帮我查下咖啡因对睡眠的研究",
+    "outcome": "CHARGED",
+    "credBefore": 10,
+    "credAfter": 9,
+    "latency_s": 120,
+    "reply": "AGENT - POWERDRILL AI 两份文件已成功生成并确认存在。以下是本次研究的核心发现总结： --- 咖啡因与睡眠研究：核心结论 机制层面： 咖啡因通过竞争性拮抗腺苷A1/A2A受体来抑制睡意。腺苷是大脑中积累\"睡眠压力\"的关键信号分子，咖啡因阻断了这一信号，导致大脑保持觉醒状态。 对睡眠的客观损害： 大量研究（包括多导睡眠图研究和可穿戴设备研究）一致显示，咖啡因摄入可减少总睡眠时长、延长入睡潜伏期、降低NREM深睡眠（慢波活动）。2025年一项大规模社区多导睡眠图研究提供了迄今最强的因果证据，证实高习惯性摄入与多项客观睡眠指标恶化相关。 主客观感知错位： 有趣的是，部分研究发现咖啡因使用者的主观睡眠质量感知与客观睡眠损害并不完全一致——他们感觉睡眠质量尚可，但客观数据显示深睡眠已受影响，这可能导致睡眠需求被低估。 时间至关重要： 饮用时间是最关键的可调节因素。咖啡因血浆半衰期约为3–7小时，午后（尤其是傍晚后）摄入将直接影响夜间睡眠。研究普遍建议睡前至少6小时停止摄入。 遗传个体差异： 两个基因是目前证据最充分的调节因素——CYP1A2（决定代谢速率）和ADORA2A rs5751876（决定受体敏感性）。携带ADORA2A T等位基因纯合子（TT型）者对咖啡因诱导的睡眠干扰更敏感；CYP1A2慢代谢型者咖啡因在体内停留时间更长。 长期摄入与戒断循环： 习惯性大量摄入"
+   },
+   {
+    "n": 4,
+    "agent": "wheel",
+    "prompt": "nvda 两百股 成本150 看看",
+    "outcome": "ERROR",
+    "error": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator"
+   }
+  ],
+  "address": "0x606A068369B0A27760509D30e0bc5f999eF4A2Ab",
+  "accountId": "fc377371-6d10-4dc6-a7ae-bfc15d11fe81",
+  "clientKind": "H"
+ },
+ {
+  "id": "C",
+  "kind": "old",
+  "lang": "zh-CN",
+  "agents": [
+   "Baidu General"
+  ],
+  "calls": [
+   {
+    "n": 1,
+    "agent": "baidu",
+    "prompt": "nft 现在还有搞头不",
+    "outcome": "CHARGED",
+    "credBefore": 9,
+    "credAfter": 8,
+    "latency_s": 30,
+    "reply": "AGENT 12:42 PM 这个问题要分两个层面来看：你是想投资投机（炒），还是想做事（创业/品牌）。 直接说结论：如果是冲着“囤图片等暴富”去的，现在基本没搞头了；如果是冲着“做产品、做品牌、做用户权益”去的，现在反而是冷静下来挑靠谱赛道的窗口期。 具体拆解给你看： 1. 现状：投机市场确实凉了 2021年的PFP（头像）狂潮早退烧了，现在流动性极差。 资本和散户的热钱都跑到AI和Meme币去了，NFT板块严重失血，成交量萎缩到高峰期的零头。 以前靠“拉盘、喊单”的逻辑现在玩不转了，大概率接了最后一棒。 2. 还有搞头的方向（非炒作逻辑） 实用型权益（Utility NFT）：演唱会门票、会员卡、积分体系、球星卡链上凭证。星巴克、耐克、各种体育联盟都在用NFT当品牌忠诚度工具，走的是消费品逻辑，不是金融逻辑。 RWA（现实世界资产）：把房产、债券、碳排放配额上链。香港、新加坡都在推，这是目前相对严肃且有政策红利的赛道。 链游/游戏道具：游戏内装备和角色的确权，虽然有争议，但仍是链游的底层死磕方向。 3. 必须避开的坑 国内红线极严：如果你人在国内，这纯粹是法律雷区。国内只承认合规的“数字藏品”，且严禁二级市场炒作和产生金融属性。用NFT搞代币、搞撮合交易，轻则平台封禁，重则涉嫌非法集资。这条路在国内基本是绝路，别抱有侥幸心理。 流动性陷阱：哪怕是海外市场，非头部项目（如BAYC"
+   },
+   {
+    "n": 2,
+    "agent": "baidu",
+    "prompt": "哎 帮我看下 稳定币是啥 说人话",
+    "outcome": "CHARGED",
+    "credBefore": 8,
+    "credAfter": 7,
+    "latency_s": 15,
+    "reply": "AGENT 12:42 PM 行，咱就说人话。 稳定币，简单说就是“币圈里的数字美元”。 因为比特币这类加密货币价格像过山车一样，一天能暴涨暴跌20%，没人敢拿它去买咖啡。为了解决这个问题，有人发行了一种新币，规定“1个这种币永远等于1美元”。这叫“锚定”。 别的币价格乱跳，它纹丝不动，非常“稳定”，所以叫稳定币。 它的核心作用有三个： 当“仓库”：你在交易所买卖币，怕暴跌，就把钱换成稳定币存着，波动小，保住本金。 当“桥梁”：想买比特币？先换成稳定币，再买比特币，方便快速。 当“入金通道”：很多平台不支持直接充值人民币，你可以用人民币买稳定币，再转入平台。 最常用的就是 USDT（泰达币） 和 USDC，你当它们是“数字美元”就行。 小警示（说在最后）： 稳定币背后必须有真实的美元储备作担保才安全（你存1美元，它发行1个USDT）。但不是所有稳定币都靠谱，有些是“算法稳定币”，靠代码硬撑，崩盘过好几次（比如LUNA，从80美元直接跌到接近0）。所以你现在只要记住，买USDT和USDC这类有实际储备的大牌即可，别碰那些花里胡哨的小币种。 CONTINUE Ask another question The Agent keeps this conversation context. A new turn uses the published Credits. Try an examp"
+   },
+   {
+    "n": 3,
+    "agent": "baidu",
+    "prompt": "那个区块链到底火啥 简单点",
+    "outcome": "CHARGED",
+    "credBefore": 7,
+    "credAfter": 6,
+    "latency_s": 10,
+    "reply": "AGENT 12:43 PM 说白了，区块链的核心就三件事： 去中心化：以前数据都存在某家公司/银行的服务器上，信不信由它说了算。区块链让所有参与者各持一份账本，谁也别想偷偷改。 不可篡改：数据按块串联，改一个块就得改所有后续块，且要超过全网51%的算力——基本不可能。 公开透明：全网的交易记录人人可查，想造假成本极高。 所以它火的本质是：解决了“陌生人之间如何互相信任”的问题，不需要中间人（银行、政府、平台）担保。 火的具体表现就两条线： 科技/资本线：以太坊智能合约 → DeFi（去中心化金融）、NFT、GameFi，以及2024年再次火爆的Web3叙事，风口拥护者疯狂涌入。 投机线：比特币/加密币暴涨暴跌，造富神话+割韭菜故事并存，散户和机构都盯着。 一句话总结：它提供了一个“没有老板也能记账”的系统，能重构金融和互联网的信任规则，同时给了投机者一个巨大的赌场。 但实际落地目前还很早期，炒作成分远超实用价值。 CONTINUE Ask another question The Agent keeps this conversation context. A new turn uses the published Credits. Try an example Introduce me to the Baidu Qianfan Platform Help me make a c"
+   },
+   {
+    "n": 4,
+    "agent": "baidu",
+    "prompt": "帮我憋个请假理由 自然点",
+    "outcome": "CHARGED",
+    "credBefore": 6,
+    "credAfter": 5,
+    "latency_s": 15,
+    "reply": "AGENT 12:43 PM 好，给你几个“自然不刻意”的请假理由，按场景分，你挑个不撞款的： --- 1. 家用水管/电路出问题，要等维修师傅上门 “师傅约了两天才排到，家里没水/没电扛不住，只能请半天假。” 听起来急，但又能说明白“为什么不能下班再处理”，很真实。 --- 2. 家里长辈临时要来，或者家里人要办紧急的手续 “阿姨/叔叔临时今天过来，家里腾不出人，得回去接送/办个事。” 理由比较具体，不会被追问太多，而且“家里的事”老板一般不好意思细问。 --- 3. 自己身体不舒服，但别说“感冒” “昨晚好像吃坏东西了，今天一直不太舒服，想在家躺一下。” 或 “偏头痛犯了，怕下午反应慢，想把假请了调一下。” 太常见的“我感冒了”容易被怀疑，肠胃或偏头痛这类没法“装好”的更有说服力。 --- 4. 如果公司比较吃“务实”这一套 “家里今天突然有事，我上午处理完，下午尽量赶回来，实在赶不回来我再补流程。” 这种说法显得你有责任心，老板反而更容易批。 --- 如果你不想解释细节，只要逻辑过关，就用这条最稳的： “家里有点急事，需要今天处理一下，事情弄完我就回来，麻烦批一下。” 不慌、不解释太多、语气淡定，最像真的。 --- 小提醒： 别发长段解释，越短越像真的。 请完之后当天就不要再发“出去玩/吃大餐”的朋友圈（这属于隐形雷区）。 “家事”这个理由如果你们公司问得细，你要能接住“什么"
+   }
+  ],
+  "address": "0x5a7976Ab5E837D9dEdd69A04791B4580a1DFEb3E",
+  "accountId": "3891afe7-f5a5-42de-b2af-de749fde9a8a",
+  "clientKind": "H"
+ }
+]
